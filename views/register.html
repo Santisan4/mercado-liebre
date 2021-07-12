@@ -7,7 +7,128 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="POST">
+    <header class = "main-header">
+        <div class = "main-header-top-bar">
+            <div class = "primer-bloque-header">
+                <img src = "/img/logo-mercado-liebre.svg" class = "logo" style="width: 120px;">
+                <div class="form-group fg--search search-bar">
+                    <input type="text" class="input" placeholder=" Buscar productos, marcas " style="width: 155px";>
+                    <button class = "boton-busqueda-header" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <br>    
+            <div class = "copy-header">
+                <i class="fas fa-hand-holding-usd"></i>
+                Comprá en cuotas y sin tarjeta de crédito
+            </div>
+        </div>
+        <br>
+        <a href="#" class = "hamburger-button">
+            <i class="fas fa-bars"></i>
+        </a>
+        <nav class = "main-navbar">
+            <ul class = "left-navbar">
+                <li><a href="#">Todos los productos</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Tiendas Oficiales</a></li>
+                <li><a href="#">Vender</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+            <ul class = "right-navbar">
+                <li><a href="#">Creá tu cuenta <i class="far fa-address-card"></i></a></li>
+                <li><a href="#">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+                <li><a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a></li>
+            </ul>
+        </nav>
+        
+    </header> 
+    
+    <main>
+
+        <section class= "form-singup">
+           
+    
+            <form action= "/register.html" method="POST">
+            
+                
+             <div class= "singup1">
+                <h2 class="form-title" id="signup">Registrate</h2>
+                <h4>Es rapido y facil!</h4>
+            
+            <div class="emaillogin">
+                <label for="email"></label>
+                <input type="email" name= "email" id= "email" autofocus= 1 placeholder="&#x1F4E7 Correo electronico" aria-required="true" aria-describedat="form-email.error" data-missing-error="El campo es requerido." required>
+                <div class="invalid-feedback" id="form-email-error"></div>
+            </div>
+            
+            <div class="nombrelogin">
+                <label for="name"></label>
+                <input type="text" name= "name" id= "name" autofocus= 1 placeholder="&#x1F464 Nombre y Apellido" required> 
+            </div>
+    
+            <div class="fechanacimiento">
+                <label for="start" class="fecha-nacimiento">Fecha de nacimiento:</label>
+    
+                <input type="date" id="start" name="trip-start"
+           value="2021-07-06"
+           min="1900-01-01" max="2023-12-31">
+            </div>
+     
+            <div class="passwordlogin">
+            
+                <label for="name"></label>
+                <input type="password" name= "password" id= "password" autofocus= 1 placeholder=" &#x1F511 Contraseña" required>
+            </div>
+            <div class="passwordlogin">
+            
+                <label for="name"></label>
+                <input type="password" name= "password" id= "password" autofocus= 1 placeholder=" &#x1F511 Repetir contraseña" required>
+            </div>
+             <br>
+            
+             <div>
+                <button type="submit" class="buttonlogin">Crear mi cuenta</button>
+            
+            </div> 
+            
+            <h5>Al registrarte aceptas nuestras condiciones, politicas de datos y politica cookis.</h5>
+            </div>
+            
+            
+            
+            
+            </form>
+            
+                 </section>
+    
+    </main>
+
+    <footer class = "pie-de-pagina">
+        <div class = "contenedor-elementos-footer">
+
+                <i class="fas fa-credit-card fa-em icono-foooter" ></i>
+                <p class = "titulo">Paga con tarjeta o efectivo</p>
+                <p class = "cuerpo-texto">Con mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y Siempre es seguro!</p>
+
+               
+                <i class="fas fa-gift fa-em" class = "icono-foooter"></i>
+                <p class = "titulo">Envio gratis desde $2500</p>
+                <p class = "cuerpo-texto">Solo por estar registrad@ en Mercado Liebre tenés envíos gratis en miles de productos. Es un beneficio de Mercado Puntos.
+             
+                <i class="fas fa-user-shield fa-em icono-foooter"></i>
+                <p class = "titulo">Seguridad, de principio a fin</p>
+                <p class = "cuerpo-texto">¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer, porque estás siempre protegid@.</p>
+    
+        </div>
+        <div class = "elemento-footer">
+
+            <br>
+            <p class = "titulo">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
+            
+        </div>
+            
+    </footer>
+    >>form action="" method="POST">
         <label for="nombreyApellido">Nombre y Apellido</label>
         <input type="text" name="nombreyApellido" id="nombreyApellido">
 
@@ -34,7 +155,7 @@
         </select>
         
         <label>Foto de Usuario</label>
-        <input
+        <input>
         
         
         

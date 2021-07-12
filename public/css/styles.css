@@ -3,6 +3,20 @@
     margin: 0;
     padding: 0;
 }
+.primer-bloque-header{
+    display: flex;
+    width: 100%;
+}
+
+#barra-busqueda-header{
+    width: 50%;
+    margin-left: 5px;
+}
+
+.boton-busqueda-header{
+    border-radius: 30%;
+}
+
 
 body{
     font-family: "roboto"
@@ -18,15 +32,15 @@ body{
     color: #ffff;
     display: block;
     max-width: 50px;
-    padding: 15px 0;
-    border-radius: 8px;
+    padding: 2px 0;
+    border-radius: 5px;
     text-align: center;
     font-size: 17px;
     margin: auto;
 }
 
 .logo{
-    width: 100px;
+    width: 50%;
 }
 .copy-header{
     font-weight: 400;
@@ -87,40 +101,10 @@ body{
     font-family: 'Roboto'
 }
 
-
-.titulares-seccion{
-    font-family: "roboto";
-    font-size: 24px;
-    font-weight: 100;
-    text-align: left;
-    margin-left: 60px;
-}
-
-.icono-footer{
-    margin-bottom: 10px;
-    font-size: 2em;
-}
-.footer{
-    display: flex;
-    flex-direction: nowrap;
-}
-
-.contenedor-elementos-footer{
-    text-align: center;
-    font-family: "roboto";
-    display: flex;
-    flex-direction: nowrap;
-}
-
-
 .cuerpo-texto{
     font-size: 12px;
 }
 
-.descripcion {
-    font-size: 16px;
-    
-}
 
 .lista-oferta-precio{
     display: flex;
@@ -131,14 +115,6 @@ body{
     border: solid 1px blac#ebebeb;
     width: 300px;
 }
-.main{
-    text-align: center;
-    background-color: #ebebeb;
-    width: 100%;
-    margin: auto;
-
-}
-
 
 .logo-envio{
     display: block;
@@ -163,23 +139,104 @@ body{
 
 
 }
+
+.oferta{
+    flex-grow: 0.75;
+}
+/*MAIN*/
+
+.main-seccion{
+    text-align: center;
+    background-color: #ebebeb;
+    width: 100%;
+    margin: auto;
+
+}
+
 .seccion-articulos{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
    
 }
+
 .elementos-articulo{
     border-top: 1px solid #FFF;
     font-size:10px;
     position: relative;
+    background-color: white;
 }
 
-.oferta{
-    flex-grow: 0.75;
+.titulares-seccion{
+    font-family: "roboto";
+    font-size: 24px;
+    text-align: left;
+    margin-left: 60px;
+    margin-left: 30px;
+    font-weight: 900;
 }
 
-/*NAVEGACION EN tablet*/
+.elementos-articulo{
+    border-top: 1px solid #ebebeb;
+    font-size:10px;
+    position: relative;
+    padding: 15px;
+
+}
+
+.camion-logo{
+    display: block;
+    font-size: 16px;
+    padding: 2px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #39b54a;
+    background-color: #FFF;
+    border-radius: 50%;
+    right: 15px;
+    top: -18px;
+    color:#39b54a;
+    position: absolute;
+
+}
+
+.descripcion {
+    font-size: 16px;
+    display: none;   
+}
+
+/*FOOTER*/
+
+.contenedor-elementos-footer{
+    text-align: center;
+    font-family: "roboto";
+    
+}
+
+.icono-footer{
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.ultima-parte-footer{
+    border-top:solid 1px #ebebeb;
+}
+
+.copyright-footer{
+    font-family: "roboto";
+    font-size: 15px;
+}
+
+.icono-footer{
+    color: #1259c3;
+    font-size: 2em;
+}
+/*HTML REGISTER*/
+
+
+
+
+/*NAVEGACION EN TABLET*/
 
 @media (min-width: 361px){
     .main-header-top-bar{
@@ -216,33 +273,84 @@ body{
 
 /*NAVEGACION EN DESKTOP*/
  @media (min-width: 769px){
-     .logo{
+
+    /*HEADER*/
+
+    .primer-bloque-header{
+        display: flex;
+        width: 60px;
+    }
+    
+    #barra-busqueda-header{
+        width: 50px;
+        margin-left: 5px;
+    }
+    
+    .boton-busqueda-header{
+        border-radius: 30%;
+    }
+    .logo{
          width: 250px;
      }
-     .main-header-top-bar, .main-navbar{
-        max-width: 1200px;
+    .main-header-top-bar, .main-navbar{
+
         margin: auto; 
      }
-     .main-header-top-bar{
+    .main-header-top-bar{
          align-items: center;    
      }
 
-     .main{
+    .main{
          width: 100%;
      }
-     .copy-header{
+    .copy-header{
          max-width: none;
          margin: 0;
      }
-     .main-navbar{
+    .main-navbar{
          margin-top: 20px;
      }
-     .main-navbar li{
+    .main-navbar li{
          margin: 10px;
          
      }
-     .main-navbar a{
+    .main-navbar a{
          font-size: 19px;
      }
-     
+    
+ 
+     /*MAIN*/
+
+    
+     /*FOOTER*/
+
+    .contenedor-elementos-footer{
+        text-align: center;
+        font-family: "roboto";
+        display: flex;
+        flex-direction: row;
+        
+    }
+    
+    .icono-footer{
+        margin-bottom: 10px;
+        font-size: 2em;
+    }
+    
+    .ultima-parte-footer{
+        border-top:solid 1px #ebebeb;
+    }
+    
+    .copyright-footer{
+        font-family: "roboto";
+        font-size: 15px;
+    }
+    
+    .icono-footer{
+        color: #1259c3;
+        font-size: 2em;
+    }
+
+
+
  }

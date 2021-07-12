@@ -16,16 +16,20 @@
 <body>
     <header class = "main-header">
         <div class = "main-header-top-bar">
-            <img src = "/img/logo-mercado-liebre.svg" class = "logo" style="width: 180px;">
-            <div class="form-group fg--search search-bar">
-                <input type="text" class="input" placeholder="Buscar productos, marcas" style="width: 200px";>
-                <button type="submit"><i class="fa fa-search"></i></button>
+            <div class = "primer-bloque-header">
+                <img src = "/img/logo-mercado-liebre.svg" class = "logo" >
+                <div id = "barra-busqueda-header" class="form-group fg--search search-bar">
+                    <input type="text" class="input" placeholder=" Buscar productos, marcas " style="width: 130px";>
+                    <button class = "boton-busqueda-header" type="submit"><i class="fa fa-search"></i></button>
+                </div>
             </div>
+            <br>    
             <div class = "copy-header">
                 <i class="fas fa-hand-holding-usd"></i>
                 Comprá en cuotas y sin tarjeta de crédito
             </div>
         </div>
+        <br>
         <a href="#" class = "hamburger-button">
             <i class="fas fa-bars"></i>
         </a>
@@ -46,17 +50,15 @@
         
     </header> 
     <img src = "/img/img-home-banner.jpg" class = "banner">
-    <main class = "main">
+    <main class = "main-seccion">
         <br>
-        <br>
-        <h2 class = "titulares-seccion" >Basado en tu ultima visita</h2>
-        <br>
+        <p class = "titulares-seccion" >Basado en tu ultima visita</p>
         <br>
         <section class = "seccion-articulos">
             <article class = "articulo">
                 <img class = "imagen" src = "/img/img-macbook-pro-2019.jpg">
                 <div class = "elementos-articulo">
-                    <div class = "camionsito">
+                    <div class = "camion-logo">
                         <i class="fas fa-truck truck-logo"></i>
                     </div>
                     <div class="container-product-info">
@@ -66,13 +68,13 @@
                         </ul>
                     </div>
                     <br>
-                    <h3 class="descripcion">Macbook Pro 2019</h3>
+                    <h4 class="descripcion">Macbook Pro 2019</h4>
                 </div>
             </article>
             <article class = "articulo">
                     <img class = "imagen" src= "/img/img-samsung-galaxy-s10.jpg" >
                     <div class = "elementos-articulo">
-                        <div>
+                        <div class = "camion-logo">
                             <i class="fas fa-truck truck-logo"></i>
                         </div>
                         <div class="container-product-info">
@@ -82,13 +84,13 @@
                             </ul>
                         </div>
                         <br>
-                        <h3 class = "descripcion">Samsung Galaxy s10</h3>
+                        <h4 class = "descripcion">Samsung Galaxy s10</h3>
                     </div>
                 </article>
                 <article class = "articulo">
                     <img class = "imagen" src= "/img/img-cafetera-moulinex.jpg" >
                     <div class = "elementos-articulo">
-                        <div>
+                        <div class = "camion-logo">
                             <i class="fas fa-truck truck-logo"></i>
                         </div>
                         <div class="container-product-info">
@@ -98,13 +100,13 @@
                             </ul>
                         </div>
                         <br>
-                        <h3 class = "descripcion">Cafetera Moulinex</h3>
+                        <h4 class = "descripcion">Cafetera Moulinex</h4>
                     </div> 
                 </article>
                 <article class = "articulo">
                     <img class = "imagen" src= "/img/img-tv-samsung-smart.jpg" >
                     <div class = "elementos-articulo">
-                        <div>
+                        <div class = "camion-logo">
                             <i class="fas fa-truck truck-logo"></i>
                         </div>
                         <div class="container-product-info">
@@ -114,7 +116,7 @@
                             </ul>
                         </div>
                         <br>
-                        <h3 class = "descripcion">SmartTv Samsung 43"</h3>
+                        <h4 class = "descripcion">SmartTv Samsung 43"</h4>
                     </div> 
                 </article>
         </section>
@@ -125,82 +127,89 @@
                 <article class = "articulo">
                     <img class = "imagen" src="/img/img-cafetera-moulinex.jpg">
                     <div class="elementos-articulo">
-                        <div>
+                        <div class = "camion-logo">
                             <i class="fas fa-truck truck-logo"></i>
                         </div>
                         <ul class="lista-oferta-precio">
                             <li type="none" class="precio">$6.700</li>
                             <li type="none" class="oferta">40% off</li>
                         </ul>
-                    <h3 class = "descripcion">Cafetera Moulinex</h3>
+                    <h4 class = "descripcion">Cafetera Moulinex</h4>
                     </div>
                  </article>
                 <article class = "articulo">
                     <img class = "imagen" src="/img/img-tv-samsung-smart.jpg">
                     <div class="elementos-articulo">
-                        <div>
+                        <div class = "camion-logo">
                             <i class="fas fa-truck truck-logo"></i>
                         </div>
                         <ul class="lista-oferta-precio">
                             <li type="none" class="precio">$23.200</li>
                             <li type="none" class="oferta">5% off</li>
                         </ul>
-                    <h3 class = "descripcion">SmartTv Samsung 43"</h3>
+                    <h4 class = "descripcion">SmartTv Samsung 43"</h4>
                     </div>  
                 </article>
                 <article class = "articulo">
                     <img class = "imagen" src = "/img/img-macbook-pro-2019.jpg">
                     <div class="elementos-articulo">
-                        <div>
+                        <div class = "camion-logo">
                         <i class="fas fa-truck truck-logo"></i>
                         </div>
                     <ul class="lista-oferta-precio">
                         <li type="none" class="precio">$230.000</li>
                         <li type="none" class="oferta">20% OFF</li>
                     </ul>
-                    <h3 class = "descripcion">Macbook Pro 2019</h3>
+                    <h4 class = "descripcion">Macbook Pro 2019</h4>
                     </div>
                 </article>
                 <article class = "articulo">
                     <img class = "imagen" src= "/img/img-samsung-galaxy-s10.jpg" >
                     <div class="elementos-articulo">
-                        <div>
+                        <div class = "camion-logo">  
                             <i class="fas fa-truck truck-logo"></i>
                         </div>
                         <ul class="lista-oferta-precio">
                             <li type="none" class="precio">$70.500</li>
                             <li type="none" class="oferta">10% off</li>
                         </ul>
-                    <h3 class = "descripcion">Samsung Galaxy S10</h3>
+                    <h4 class = "descripcion">Samsung Galaxy S10</h4>
                     </div>
                 </article>
                 </section>
+    <br>
+    <br>
     <br>            
     </main>
     <br>
-    <br>
-    <footer class = "footer">
+    <footer class = "pie-de-pagina">
         <div class = "contenedor-elementos-footer">
-            <div class = "elemento-footer">
-                <i class="fas fa-credit-card fa-em icono-foooter" ></i>
+            <div>
+                <div class = "icono-footer">
+                    <i class="fas fa-credit-card fa-em"></i>
+                </div>
+
                 <p class = "titulo">Paga con tarjeta o efectivo</p>
                 <p class = "cuerpo-texto">Con mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y Siempre es seguro!</p>
             </div>
-            <div class = "elemento-footer">    
-                <i class="fas fa-gift fa-em icono-foooter"></i>
+            <div>
+                <div class = "icono-footer">
+                    <i class="fas fa-gift fa-em"></i>
+                </div>   
                 <p class = "titulo">Envio gratis desde $2500</p>
-                <p class = "cuerpo-texto">Solo por estar registrad@ en Mercado Liebre tenés envíos gratis en miles de productos. Es un beneficio de Mercado Puntos.
-            </div> 
-            <div class = "elemento-footer">    
-                <i class="fas fa-user-shield fa-em icono-foooter"></i>
+                <p class = "cuerpo-texto">Solo por estar registrad@ en Mercado Liebre tenés envíos gratis en miles de productos. Es un beneficio de Mercado Puntos.</p>
+            </div>
+            <div>
+                <div class = "icono-footer">
+                    <i class="fas fa-user-shield fa-em"></i>
+                </div>  
                 <p class = "titulo">Seguridad, de principio a fin</p>
                 <p class = "cuerpo-texto">¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer, porque estás siempre protegid@.</p>
-             </div> 
+            </div>
         </div>
-        <div class = "elemento-footer">
+        <div class = "ultima-parte-footer">
 
-            <br>
-            <p class = "titulo">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
+            <p class = "copyright-footer">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
             
         </div>
             
