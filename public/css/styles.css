@@ -18,8 +18,8 @@
 }
 
 .logo{
-    width: 170px;
-    margin-left: 70px;
+    width: 200px;
+    
 }
 
 #barra-busqueda-header{
@@ -31,7 +31,7 @@
 }
 
 .input{
-    width: 230px;
+    width: 180px;
     margin-top: 5px;
 }
 
@@ -66,7 +66,7 @@ body{
     font-weight: 400;
     text-align: center;
     font-family: "roboto";
-    margin-left: 150px;
+    margin-left: 70px;
 }
 
 .main-navbar{
@@ -264,7 +264,7 @@ body{
 
 /*NAVEGACION EN TABLET*/
 
-@media (min-width: 604px) {
+@media (min-width: 481px) {
 
     /*HEADER*/
 
