@@ -18,7 +18,7 @@
 }
 
 .logo{
-    width: 200px;
+    width: 160px;
     
 }
 
@@ -31,7 +31,7 @@
 }
 
 .input{
-    width: 180px;
+    width: 120px;
     margin-top: 5px;
 }
 
@@ -66,7 +66,7 @@ body{
     font-weight: 400;
     text-align: center;
     font-family: "roboto";
-    margin-left: 70px;
+    margin-left: 10px;
 }
 
 .main-navbar{
