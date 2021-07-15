@@ -258,6 +258,13 @@ body{
     color: #1259c3;
     font-size: 2em;
 }
+
+.cuerpo-texto{
+    font-size: 12px;
+    font-family: "roboto";
+    margin: auto;
+}
+
 /*HTML REGISTER*/
 
 
