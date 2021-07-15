@@ -1,32 +1,51 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
+
+/*MOBILE FIRST*/
+
+/*HEADER*/
+
+.main-header-top-bar{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
 .primer-bloque-header{
     display: flex;
     width: 100%;
 }
 
+.logo{
+    width: 170px;
+    margin-left: 70px;
+}
+
 #barra-busqueda-header{
     width: 50%;
-    margin-left: 5px;
 }
 
 .boton-busqueda-header{
     border-radius: 30%;
 }
 
+.input{
+    width: 230px;
+    margin-top: 5px;
+}
 
 body{
     font-family: "roboto"
 }
+
 .main-header{
     background-color: #EAC926;;
     font-family: 'Roboto';
     padding: 20px;
     width: 100%;
 }
+
 .hamburger-button{
     background-color: #03264C;
     color: #ffff;
@@ -39,14 +58,17 @@ body{
     margin: auto;
 }
 
-.logo{
+.contenedor-logo{
     width: 50%;
 }
+
 .copy-header{
     font-weight: 400;
     text-align: center;
     font-family: "roboto";
+    margin-left: 150px;
 }
+
 .main-navbar{
     display: none;
     font-family: "roboto";
@@ -136,13 +158,13 @@ body{
     margin: auto;
     box-shadow: 0px 0px 10px rgb(100,100,100);
     margin-bottom: 10px;
-
-
 }
 
 .oferta{
     flex-grow: 0.75;
 }
+
+
 /*MAIN*/
 
 .main-seccion{
@@ -200,16 +222,20 @@ body{
 
 }
 
-.descripcion {
+.descripcion{
     font-size: 16px;
-    display: none;   
+    font-family: "roboto";
+    text-align: left;
+    margin-left: 20px;
+    display: none;
+
 }
 
 /*FOOTER*/
 
 .contenedor-elementos-footer{
     text-align: center;
-    font-family: "roboto";
+    font-family: 'Roboto';
     
 }
 
@@ -238,13 +264,30 @@ body{
 
 /*NAVEGACION EN TABLET*/
 
-@media (min-width: 361px){
+@media (min-width: 604px) {
+
+    /*HEADER*/
+
+    .main-header{
+        width: 100%;    
+    }
+
     .main-header-top-bar{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .logo{
+        width: 120px;
+    }
+
+    .input{
+        width: 130px;
+        margin-left: 15px;
     }
     .copy-header{
-        max-width: 350px;
+        width: 200px;
         text-align: right;
     }
     .hamburger-button{
@@ -261,6 +304,11 @@ body{
         margin: 0 5px;
 
     }
+
+
+     /*HEADER*/
+
+
     .footer {
         display: flex;
         flex-direction: wrap;
@@ -272,56 +320,84 @@ body{
  }
 
 /*NAVEGACION EN DESKTOP*/
- @media (min-width: 769px){
+ @media (min-width: 1208px){
 
     /*HEADER*/
-
-    .primer-bloque-header{
-        display: flex;
-        width: 60px;
-    }
     
-    #barra-busqueda-header{
-        width: 50px;
-        margin-left: 5px;
-    }
-    
-    .boton-busqueda-header{
-        border-radius: 30%;
-    }
-    .logo{
-         width: 250px;
-     }
-    .main-header-top-bar, .main-navbar{
-
-        margin: auto; 
-     }
     .main-header-top-bar{
-         align-items: center;    
-     }
+        display: flex;
+        flex-direction:row;
+        width: 100%;
+    }
 
-    .main{
-         width: 100%;
-     }
-    .copy-header{
-         max-width: none;
-         margin: 0;
-     }
+    #barra-busqueda-header{
+        margin-left: 25px;
+        width: 275px;
+        flex-grow: 1;
+    }
+    
+    .logo{
+        width: 150px;
+    }
+
+    .input{
+        min-width: 250px;
+        max-width: 400px;
+    }
+
+    .boton-busqueda-header{
+        border-radius: 0%;
+    }
+
     .main-navbar{
-         margin-top: 20px;
-     }
-    .main-navbar li{
-         margin: 10px;
-         
-     }
+        margin: auto;
+        display: flex;
+        justify-content: space-around; 
+    }
+
+    .copy-header{
+        font-weight: 900;
+        margin-left: 10px;
+        width: 350px;
+    }
+
+    .left-navbar{
+        margin-right: 100px;
+
+    }
+
     .main-navbar a{
-         font-size: 19px;
-     }
+        font-size: 19px;
+        font-weight: 900;
+    }
     
  
      /*MAIN*/
+    .main{
+        width: 100%;
+    }
 
+    .titulares-seccion{
+        margin-left: 60px;
+    }
+
+    .descripcion{
+        display: none;
+        text-align: center;
+    }
     
+    div:hover h4{
+        display:block;
+
+    }
+
+    .precio{
+        font-size: 20px;
+        font-weight:900;
+        flex-grow: 0.30;
+        text-align: center;
+    }
+
      /*FOOTER*/
 
     .contenedor-elementos-footer{
@@ -329,6 +405,7 @@ body{
         font-family: "roboto";
         display: flex;
         flex-direction: row;
+        justify-content: center;
         
     }
     
@@ -342,7 +419,7 @@ body{
     }
     
     .copyright-footer{
-        font-family: "roboto";
+        font-family: 'Roboto';
         font-size: 15px;
     }
     
@@ -351,6 +428,11 @@ body{
         font-size: 2em;
     }
 
+    .cuerpo-texto{
+        text-align: center;
+        font-weight:900;
+        font-family: 'Roboto';
+    }
 
 
  }

@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link rel = "stylesheet" href = "/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,14 +19,15 @@
 <body>
     <header class = "main-header">
         <div class = "main-header-top-bar">
-            <div class = "primer-bloque-header">
-                <img src = "/img/logo-mercado-liebre.svg" class = "logo" >
-                <div id = "barra-busqueda-header" class="form-group fg--search search-bar">
-                    <input type="text" class="input" placeholder=" Buscar productos, marcas " style="width: 130px";>
-                    <button class = "boton-busqueda-header" type="submit"><i class="fa fa-search"></i></button>
-                </div>
+            <div class = "contenedor-logo">
+                <img src = "/img/logo-mercado-liebre.svg" class = "logo">
+            </div>    
+            <div id = "barra-busqueda-header" class="form-group fg--search search-bar">
+                <input type="text" class="input" placeholder=" Buscar productos, marcas ">
+                <button class = "boton-busqueda-header" type="submit"><i class="fa fa-search"></i></button>
             </div>
-            <br>    
+            <br>
+            <br>
             <div class = "copy-header">
                 <i class="fas fa-hand-holding-usd"></i>
                 Comprá en cuotas y sin tarjeta de crédito
@@ -116,7 +120,9 @@
                             </ul>
                         </div>
                         <br>
-                        <h4 class = "descripcion">SmartTv Samsung 43"</h4>
+                        <div class = div-descripcion>
+                            <h4 class = "descripcion">SmartTv Samsung 43"</h4>
+                        </div>
                     </div> 
                 </article>
         </section>
@@ -184,7 +190,7 @@
     <br>
     <footer class = "pie-de-pagina">
         <div class = "contenedor-elementos-footer">
-            <div>
+            <div class = "elemento-footer">
                 <div class = "icono-footer">
                     <i class="fas fa-credit-card fa-em"></i>
                 </div>
@@ -192,14 +198,14 @@
                 <p class = "titulo">Paga con tarjeta o efectivo</p>
                 <p class = "cuerpo-texto">Con mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y Siempre es seguro!</p>
             </div>
-            <div>
+            <div class = "elemento-footer">
                 <div class = "icono-footer">
                     <i class="fas fa-gift fa-em"></i>
                 </div>   
                 <p class = "titulo">Envio gratis desde $2500</p>
                 <p class = "cuerpo-texto">Solo por estar registrad@ en Mercado Liebre tenés envíos gratis en miles de productos. Es un beneficio de Mercado Puntos.</p>
             </div>
-            <div>
+            <div class = "elemento-footer">
                 <div class = "icono-footer">
                     <i class="fas fa-user-shield fa-em"></i>
                 </div>  
@@ -207,6 +213,8 @@
                 <p class = "cuerpo-texto">¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer, porque estás siempre protegid@.</p>
             </div>
         </div>
+        <br>
+        <br>
         <div class = "ultima-parte-footer">
 
             <p class = "copyright-footer">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
