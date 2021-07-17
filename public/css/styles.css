@@ -12,6 +12,52 @@
     
 }
 
+.topnav {
+    overflow: hidden;
+    background-color: #EAC926;
+    position: relative;
+}
+
+.topnav #myLinks {
+    display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+  
+  /* Style the hamburger menu */
+.topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  /* Add a grey background color on mouse-over */
+.topnav a:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  /* Style the active link (or home/logo) */
+.active {
+    background-color: black;
+    color: black;
+  }
+
+.icon{
+    margin-right: 165px;
+    border-radius: 10px;
+}
+
+
 .primer-bloque-header{
     display: flex;
     width: 100%;
@@ -40,7 +86,7 @@ body{
 }
 
 .main-header{
-    background-color: #EAC926;;
+    background-color: #EAC926;
     font-family: 'Roboto';
     padding: 20px;
     width: 100%;
@@ -445,3 +491,11 @@ body{
 
 
  }
+
+
+
+
+
+.nombre-apellido-login{
+    margin-bottom: 10px;
+}

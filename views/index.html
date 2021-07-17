@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/normalize.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +22,7 @@
     <header class = "main-header">
         <div class = "main-header-top-bar">
             <div class = "contenedor-logo">
-                <img src = "/img/logo-mercado-liebre.svg" class = "logo">
+                <a href = "index.html"><img src = "/img/logo-mercado-liebre.svg" class = "logo"></a>
             </div>    
             <div id = "barra-busqueda-header" class="form-group fg--search search-bar">
                 <input type="text" class="input" placeholder=" Buscar productos, marcas ">
@@ -32,24 +34,25 @@
             </div>
         </div>
         <br>
-        <a href="#" class = "hamburger-button">
-            <i class="fas fa-bars"></i>
-        </a>
-        <nav class = "main-navbar">
-            <ul class = "left-navbar">
-                <li><a href="#">Todos los productos</a></li>
-                <li><a href="#">Ofertas</a></li>
-                <li><a href="#">Tiendas Oficiales</a></li>
-                <li><a href="#">Vender</a></li>
-                <li><a href="#">Ayuda</a></li>
-            </ul>
-            <ul class = "right-navbar">
-                <li><a href="#">Creá tu cuenta <i class="far fa-address-card"></i></a></li>
-                <li><a href="#">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
-                <li><a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a></li>
-            </ul>
-        </nav>
-        
+        <!-- Top Navigation Menu -->
+        <div class="topnav">
+            <a href="#home" class="active">MENU</a>
+        <!-- Navigation links (hidden by default) -->
+            <div id="myLinks">
+                <a href="#">Todos los productos</a>
+                <a href="#">Ofertas</a>
+                <a href="#">Tiendas Oficiales</a>
+                <a href="#">Vender</a>
+                <a href="#">Ayuda</a>
+                <a href="http://localhost:3000/register.html">Creá tu cuenta<i class="far fa-address-card"></i></a>
+                <a href="login.html">Ingresá<i class="fas fa-sign-in-alt"></i></a>
+                <a href="#">Mis compras<i class="fas fa-shopping-basket"></i></a>
+            </div>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+            </a>
+        </div>
     </header> 
     <img src = "/img/img-home-banner.jpg" class = "banner">
     <main class = "main-seccion">
@@ -226,5 +229,16 @@
         </div>
             
     </footer>
+   
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myLinks");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+    </script>    
 </body>
 </html>
