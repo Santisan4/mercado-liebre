@@ -66,11 +66,11 @@
                 </div>
                 <div class = "nombre-apellido-login">
                     <label>Nombre y Apellido</label>
-                    <input class = "input-login" type="text" name = "nombre-apellido-login" required>
+                    <input class = "input-login" type="text" name = "nombre-apellido-login" minlength = 2 required>
                 </div>
                 <div class = "nombre-usuario">
                     <label for = "usuario">Nombre de Usuari@</label>
-                    <input class = "input-login" type="text" name ="usuario" required>
+                    <input class = "input-login" type="text" name ="usuario" minlength = 2 required>
                 </div>
                 <div>
                     <label for ="fecha">Fecha de nacimiento</label>
@@ -78,7 +78,7 @@
                 </div>
                 <div>
                     <label for = "domicilio">Domicilio</label>
-                    <input class = "input-login" type ="text" name = "domicilio" required>
+                    <input class = "input-login" type ="text" name = "domicilio" minlength = 2 required>
                 </div>
                 <div>
                     <label>Perfil del Usuario</label>
@@ -108,17 +108,17 @@
                 </div>
                 <div>
                     <label for = "clave">Contraseña</label>
-                    <input class = "input-login" type="password" name = "clave" autofocus = 1 required>
+                    <input class = "input-login" type="password" name = "clave" autofocus = 1 minlength = 2 required>
                 </div>  
                 <div>
                     <label for = "clave">Confirmar contraseña</label>
-                    <input class = "input-login" type="password" name = "clave" autofocus = 1 required>
+                    <input class = "input-login" type="password" name = "clave" autofocus = 1 minlength = 2 required>
                 </div>
                 <div class = "input-login">
                     <button type="reset" class = "boton-registro">Cancelar</button>
                 </div>
                 <div class = "input-login">
-                    <a href = "index.html"><button type="button" class = "boton-registro" >Enviar</button></a>
+                    <a href = "index.html"><button type="submit" class = "boton-registro" >Enviar</button></a>
                 </div>   
             </form>
 

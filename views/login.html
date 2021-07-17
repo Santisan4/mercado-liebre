@@ -44,7 +44,7 @@
                 <a href="#">Tiendas Oficiales</a>
                 <a href="#">Vender</a>
                 <a href="#">Ayuda</a>
-                <a href="http://localhost:3000/register.html">Creá tu cuenta<i class="far fa-address-card"></i></a>
+                <a href="register.html">Creá tu cuenta<i class="far fa-address-card"></i></a>
                 <a href="login.html">Ingresá<i class="fas fa-sign-in-alt"></i></a>
                 <a href="#">Mis compras<i class="fas fa-shopping-basket"></i></a>
             </div>
@@ -55,42 +55,33 @@
         </div>
     </header>
 
-    <main>
+    <main class ="main-seccion">
 
         <section class = "login">
 
             <form action="/login.html" method="POST">
-                <div class= "login2">
-     
-                    <h2 class="form-title" id="signup">Inicia sesion</h2>
-                
-                    <div class="emaillogin">
-                        <label for="email"></label>
-                        <input type="email" name= "email" id= "email" autofocus= 1 placeholder="&#x1F4E7 Correo electronico" required aria-required="true" aria-describedat="form-email.error">
-                        <div class="invalid-feedback" id="form-email-error"></div>
-                    </div>
-                
-                    <div class="passwordlogin">
-                
-                        <label for="name"></label>
-                        <input type="password" name= "password" id= "password" autofocus= 1 placeholder=" &#x1F511 Contraseña" >
-
-                    </div>
-                    <br>
-                
-                    <div>
-                        <button type="submit" class="buttonlogin">Iniciar sesion</button>
-                
-                    </div> 
-                
-                    <div class="preg-singup">
-                
-                        <div class="preg-olvi"> ¿Olvidaste tu contraseña?</div>
-                
-                        <div class="buttonsingup"><button type="button" class="singup"><a href="http://localhost:3000/register.html" class= "buttonx">Registrarse </a></button> </div>
-                
-                    </div>
+                <br>
+                <div>
+                    <h2 class = "titulo-login">Login de usuario </h2>
                 </div>
+                <br>
+                <div class = "nombre-usuario">
+                    <label for = "usuario">Nombre de Usuari@</label>
+                    <input class = "input-login" type="text" name ="usuario" required>
+                </div>
+
+                <div>
+                    <label for = "clave">Contraseña</label>
+                    <input class = "input-login" type="password" name = "clave" autofocus = 1 required>
+                </div>  
+                <div>
+                    <label for = "clave">Confirmar contraseña</label>
+                    <input class = "input-login" type="password" name = "clave" autofocus = 1 required>
+                </div>
+
+                <div class = "input-login">
+                    <a href = "index.html"><button type="button" class = "boton-registro" >Enviar</button></a>
+                </div> 
                     
             </form>
 
