@@ -57,18 +57,12 @@
     border-radius: 10px;
 }
 
-
-.primer-bloque-header{
-    display: flex;
-    width: 100%;
-}
-
 .logo{
     width: 170px;
     
 }
 
-#barra-busqueda-header{
+#contenedor-barra-busqueda-header{
     width: 50%;
 }
 
@@ -375,29 +369,33 @@ body{
  }
 
 /*NAVEGACION EN DESKTOP*/
- @media (min-width: 1208px){
+ @media (min-width: 769px){
 
     /*HEADER*/
     
     .main-header-top-bar{
         display: flex;
         flex-direction:row;
+        justify-content: space-evenly;
         width: 100%;
     }
 
-    #barra-busqueda-header{
+    #contenedor-barra-busqueda-header{
         margin-left: 25px;
         width: 275px;
-        flex-grow: 1;
     }
     
+    .contenedor-logo{
+        width: 150px;
+    }
     .logo{
         width: 150px;
     }
 
     .input{
-        min-width: 250px;
-        max-width: 400px;
+        width: 210px;
+        min-width: 150px;
+        max-width: 500px;
     }
 
     .boton-busqueda-header{
@@ -412,8 +410,8 @@ body{
 
     .copy-header{
         font-weight: 900;
-        margin-left: 10px;
-        width: 350px;
+        width: 200px;
+        margin: 0;
     }
 
     .left-navbar{
@@ -426,7 +424,7 @@ body{
         font-weight: 900;
     }
     
- 
+    /*HEADER*/
      /*MAIN*/
     .main{
         width: 100%;
@@ -452,6 +450,8 @@ body{
         flex-grow: 0.30;
         text-align: center;
     }
+
+     /*MAIN*/
 
      /*FOOTER*/
 
@@ -489,6 +489,7 @@ body{
         font-family: 'Roboto';
     }
 
+     /*FOOTER*/
 
  }
 
