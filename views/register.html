@@ -55,24 +55,71 @@
         </div>
     </header>
 
-    <main>
+    <main class = "main-seccion">
 
         <section class = "register">
 
             <form action="/register.html" method="POST">
+                <br>
                 <div>
                     <h2 class = "titulo-login">Crea tu cuenta</h2>
                 </div>
                 <div class = "nombre-apellido-login">
                     <label>Nombre y Apellido</label>
-                    <input type="text" name = "nombre-apellido-login">
+                    <input class = "input-login" type="text" name = "nombre-apellido-login" required>
                 </div>
                 <div class = "nombre-usuario">
                     <label for = "usuario">Nombre de Usuari@</label>
-                    <input type="text" name ="usuario">
-
+                    <input class = "input-login" type="text" name ="usuario" required>
                 </div>
-                    
+                <div>
+                    <label for ="fecha">Fecha de nacimiento</label>
+                    <input class = "input-login" type="date" name="fecha" required>
+                </div>
+                <div>
+                    <label for = "domicilio">Domicilio</label>
+                    <input class = "input-login" type ="text" name = "domicilio" required>
+                </div>
+                <div>
+                    <label>Perfil del Usuario</label>
+                    <br>
+                    <label for = "Comprador">Comprador</label>
+                    <input class = "input-login" type="checkbox" name = "Comprar">
+                    <label for = "Vendedor">Vendedor</label>
+                    <input class = "input-login" type="checkbox" name = "Vender">
+                </div>
+                <div class = "input-login"> 
+                    <label for = "categoria-interes">Categorias de Interes:</label>
+                    <br>
+                    <label for = "categoria-interes">Electro</label>
+                    <input type="checkbox" value = "Electro">
+                    <label for = "categoria-interes">Moda</label>
+                    <input type="checkbox" value = "Moda">
+                    <label for = "categoria-interes">Hogar</label>
+                    <input type="checkbox" value = "Hogar">
+                    <label for = "categoria-interes">Jugueteria</label>
+                    <input type="checkbox" value = "Jugueteria">
+                    <label for = "categoria-interes">Vida sana</label>
+                    <input type="checkbox"  value = "Vida sana">
+                </div>
+                <div>
+                    <label>Selecciona una imagen para el usuario</label>
+                    <input class = "input-login" type = "file" name ="avatar" accept=".jpg" >
+                </div>
+                <div>
+                    <label for = "clave">Contraseña</label>
+                    <input class = "input-login" type="password" name = "clave" autofocus = 1 required>
+                </div>  
+                <div>
+                    <label for = "clave">Confirmar contraseña</label>
+                    <input class = "input-login" type="password" name = "clave" autofocus = 1 required>
+                </div>
+                <div class = "input-login">
+                    <button type="reset" class = "boton-registro">Cancelar</button>
+                </div>
+                <div class = "input-login">
+                    <a href="index.html"><button type="submit" class = "boton-registro" >Enviar</button></a>
+                </div>   
             </form>
 
         </section>

@@ -492,10 +492,23 @@ body{
 
  }
 
+/*LOGIN*/
+
+.main-seccion{
+    background-color: #ebebeb;
+}
 
 
 
 
-.nombre-apellido-login{
+.input-login{
+    margin-left: 10px;
     margin-bottom: 10px;
+}
+
+.boton-registro{
+    border-radius: 10%;
+    margin-bottom: 10px;
+    background-color:black;
+    color:white;
 }
