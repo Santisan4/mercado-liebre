@@ -323,12 +323,12 @@ body{
 
     .main-header-top-bar{
         display: flex;
-        justify-content: center;
+        flex-wrap:nowrap;
         width: 100%;
     }
 
     .logo{
-        width: 120px;
+        width: 180px;
     }
 
     .input{
@@ -336,8 +336,8 @@ body{
         margin-left: 15px;
     }
     .copy-header{
-        width: 200px;
-        text-align: right;
+        width: 50%;
+        margin: 0;
     }
     .hamburger-button{
         display: none;
