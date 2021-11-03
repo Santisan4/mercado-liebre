@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("partials/head.ejs") %>
+    <body>
+        <%- include("partials/header.ejs") %>
+        <h1>User list</h1>
+        <ul>
+            <% for( let i = 0; i < users.length; i++) { %>
+                <li>
+                    <a href ="/usuarios/detalle/<%= users[i].id %>"> <%= users[i].name %></a>
+                    <form method="POST" action="/usuarios/delete/<%= users[i].id %>?_method=DELETE">
+                    <button type="submit">Delete</button>
+                </form>
+                </li>
+            <% } %>    
+        </ul>
+        <h2>Search</h2>
+        <form action ="/usuarios/buscar" method="GET">
+            <input type="text" name = "query">
+            <input type="submit" value="Search">
+        </form>
+
+    </body>
+    <%- include("partials/footer.ejs") %>
+</html>

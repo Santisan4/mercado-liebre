@@ -2,131 +2,80 @@
     box-sizing: border-box;
 }
 
-/*MOBILE FIRST*/
-
 /*HEADER*/
-
-.main-header-top-bar{
+.main-header{
+    background-color: #EAC926;
+    font-family: 'Roboto';
+    padding: 5px;
+    width: 100%;
+    flex-direction: column;
+}
+.top-navBar{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
     
 }
+#contenedor-barra-busqueda-header{
+    display: flex;
+    width: 500px;
+    height: 36px;
+    margin-top: 5px;
+}
+.contenedor-logo{
+    width: 200px;
+}
 
-.topnav {
+.copy-header{
+    display: flex;
+    text-align: center;
+    font-family: "roboto";
+    width: 310px;
+    margin-top: 10px;
+}
+
+
+.navBar {
     overflow: hidden;
     background-color: #EAC926;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.topnav #myLinks {
-    display: none;
+.elementos-izquierda-navBar {
+    display: flex;
+}
+.elementos-derecha-navBar {
+    display: flex;
 }
 
-/* Style navigation menu links */
-.topnav a {
-    color: white;
+.navBar a {
+    color: black;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
     display: block;
 }
   
-  /* Style the hamburger menu */
-.topnav a.icon {
-    background: black;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  /* Add a grey background color on mouse-over */
-.topnav a:hover {
-    background-color: black;
-    color: white;
-  }
-  
-  /* Style the active link (or home/logo) */
-.active {
-    background-color: black;
-    color: black;
-  }
-
-.icon{
-    margin-right: 165px;
-    border-radius: 10px;
-}
-
 .logo{
-    width: 170px;
-    
-}
-
-#contenedor-barra-busqueda-header{
-    width: 50%;
-}
-
-.boton-busqueda-header{
-    border-radius: 30%;
+    width: 100%;    
 }
 
 .input{
-    width: 120px;
-    margin-top: 5px;
+    width: 470px;
 }
+
+/* FIN HEADER */
 
 body{
-    font-family: "roboto"
-}
-
-.main-header{
-    background-color: #EAC926;
-    font-family: 'Roboto';
-    padding: 20px;
-    width: 100%;
-}
-
-.hamburger-button{
-    background-color: #03264C;
-    color: #ffff;
-    display: block;
-    max-width: 50px;
-    padding: 2px 0;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 17px;
-    margin: auto;
-}
-
-.contenedor-logo{
-    width: 50%;
-}
-
-.copy-header{
-    font-weight: 400;
-    text-align: center;
-    font-family: "roboto";
-    margin-left: 20px;
-    margin-top: 15px;
-}
-
-.main-navbar{
-    display: none;
     font-family: "roboto";
 }
 
-.main-navbar ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.main-navbar a{
-    text-decoration: none;
-    color: #222222;
-    display: inline-block;
-    padding: 5px 0;
-    font-size: 17px;
-}
+
 .banner{
     width: 100%;
 }
@@ -274,31 +223,41 @@ body{
 
 /*FOOTER*/
 
+.footer {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .contenedor-elementos-footer{
     text-align: center;
     font-family: 'Roboto';
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
     
 }
 
 .icono-footer{
     margin-bottom: 10px;
+    color: #1259c3;
     font-size: 2em;
 }
 
 .ultima-parte-footer{
     border-top:solid 1px #ebebeb;
+    padding: 10px;
+    font-size: 10px;
 }
 
 .copyright-footer{
     font-family: "roboto";
-    font-size: 15px;
+    font-size: 12px;
     margin-left: 5px;
+    text-align: center;
 }
 
-.icono-footer{
-    color: #1259c3;
-    font-size: 2em;
-}
 
 .cuerpo-texto{
     font-size: 12px;
@@ -309,17 +268,14 @@ body{
 /*HTML REGISTER*/
 
 
-
+ 
 
 /*NAVEGACION EN TABLET*/
 
-@media (min-width: 481px) {
 
     /*HEADER*/
 
-    .main-header{
-        width: 100%;    
-    }
+
 
     .main-header-top-bar{
         display: flex;
@@ -327,18 +283,7 @@ body{
         width: 100%;
     }
 
-    .logo{
-        width: 180px;
-    }
 
-    .input{
-        width: 130px;
-        margin-left: 15px;
-    }
-    .copy-header{
-        width: 50%;
-        margin: 0;
-    }
     .hamburger-button{
         display: none;
     }
@@ -358,18 +303,14 @@ body{
      /*HEADER*/
 
 
-    .footer {
-        display: flex;
-        flex-direction: wrap;
-    }
      .main{
          width: 100%;
      }
     
- }
+
 
 /*NAVEGACION EN DESKTOP*/
- @media (min-width: 769px){
+
 
     /*HEADER*/
     
@@ -380,39 +321,8 @@ body{
         width: 100%;
     }
 
-    #contenedor-barra-busqueda-header{
-        margin-left: 25px;
-        width: 275px;
-    }
     
-    .contenedor-logo{
-        width: 150px;
-    }
-    .logo{
-        width: 150px;
-    }
 
-    .input{
-        width: 210px;
-        min-width: 150px;
-        max-width: 500px;
-    }
-
-    .boton-busqueda-header{
-        border-radius: 0%;
-    }
-
-    .main-navbar{
-        margin: auto;
-        display: flex;
-        justify-content: space-around; 
-    }
-
-    .copy-header{
-        font-weight: 900;
-        width: 200px;
-        margin: 0;
-    }
 
     .left-navbar{
         margin-right: 100px;
@@ -453,66 +363,10 @@ body{
 
      /*MAIN*/
 
-     /*FOOTER*/
-
-    .contenedor-elementos-footer{
-        text-align: center;
-        font-family: "roboto";
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        
-    }
-    
-    .icono-footer{
-        margin-bottom: 10px;
-        font-size: 2em;
-    }
-    
-    .ultima-parte-footer{
-        border-top:solid 1px #ebebeb;
-    }
-    
-    .copyright-footer{
-        font-family: 'Roboto';
-        font-size: 15px;
-    }
-    
-    .icono-footer{
-        color: #1259c3;
-        font-size: 2em;
-    }
-
-    .cuerpo-texto{
-        text-align: center;
-        font-weight:900;
-        font-family: 'Roboto';
-    }
-
-     /*FOOTER*/
-
- }
-
-/*REGISTRO*/
-
-.main-seccion{
-    background-color: #ebebeb;
-}
 
 
 
-
-.input-login{
-    margin-left: 10px;
-    margin-bottom: 10px;
-}
-
-.boton-registro{
-    border-radius: 10%;
-    margin-bottom: 10px;
-    background-color:black;
-    color:white;
-}
+ 
 
 
-/*LOGIN*/
+
