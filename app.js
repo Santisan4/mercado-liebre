@@ -36,3 +36,10 @@ app.listen(process.env.PORT || 3000, function(){
 app.use("/", rutasMain);
 app.use("/productos", rutasProductos);
 app.use("/usuarios", rutasUsuarios);
+
+
+//ERROR
+
+app.use((req, res, next) => {
+    res.status(404).render("not-found");
+})

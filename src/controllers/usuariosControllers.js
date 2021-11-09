@@ -1,4 +1,5 @@
 const { use } = require("../routes/productos");
+const fs = require("fs");
 
 let usuariosControllers = {
 
@@ -9,26 +10,18 @@ let usuariosControllers = {
         res.render("login")
     },
     lista: function (req, res) {
-        let users = [
-            {id: 1, name: "Dario"},
-            {id: 2, name: "Javier"},
-            {id: 3, name: "Maru"},
-            {id: 4, name: "Ale"},
-            {id: 5, name: "Santiago"},
-        ];
+        let archivoJSON = fs.readFileSync("usuarios.json",{encoding: "utf-8"});
+
+        let users = JSON.parse(archivoJSON);
 
         res.render("userList", { "users" : users });
     },
     buscar: function(req, res) {
         let loQueBuscoElUsuario = req.query.query;
-        
-        let users = [
-            {id: 1, name: "Dario"},
-            {id: 2, name: "Javier"},
-            {id: 3, name: "Maru"},
-            {id: 4, name: "Ale"},
-            {id: 5, name: "Santiago"},
-        ];
+
+        let archivoJSON = fs.readFileSync("usuarios.json",{encoding: "utf-8"});
+
+        let users = JSON.parse(archivoJSON);
 
         let usersResults =[];
 
@@ -41,13 +34,31 @@ let usuariosControllers = {
     },
     create: function(req, res) {
         let usuario = {
-            nombre: req.body.nombres,
+            nombre: req.body.firstName,
             email: req.body.email,
             direccion: req.body.direccion,
-            nacimiento: req.body.nacimiento
-
+            nacimiento: req.body.nacimiento,
+            password: req.body.password,
+            categoria: req.body.category
         }
-        res.redirect("/usuarios/lista")
+
+        let archivoUsiario = fs.readFileSync("usuarios.json", {encoding: "utf-8"});
+        let usuarios;
+        if( archivoUsiario == ""){
+            usuarios = []
+        }else {
+
+            usuarios = JSON.parse(archivoUsiario);
+        }
+        
+        usuarios.push(usuario);
+
+        usuariosJSON = JSON.stringify(usuarios);
+
+        fs.writeFileSync("usuarios.json", usuariosJSON);
+
+
+        res.redirect("/usuarios/lista");
     },
 
     edit: function(req, res) {

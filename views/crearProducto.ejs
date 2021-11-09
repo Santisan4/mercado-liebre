@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/crearProducto-style.css">
+    <%- include("partials/head.ejs") %>
+    <title>Creacion de Producto</title>
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+
+    <div class = "form-create-product">
+        <form action="/productos/crear" method="POST" >
+            <br>
+            <label for="name">Nombre del producto</label>
+            <br>
+            <input type="text" name ="name" placeholder="Ingrese nombre del producto ">
+            <br>
+            <label for="description">Descrición</label>
+            <br>
+            <input type="text" name = "description">
+            <br>
+            <label for="image">Imagen del producto</label>
+            <br>
+            <input type = "file" name ="image" accept=".jpg">
+            <br>
+            <label for="category">Categoria</label>
+            <br>
+            <input type="text" name ="category">
+            <br>
+            <label for="price">Precio</label>
+            <br>
+            <input type="text" name="price">   
+        <br>
+        <div>
+            <br>
+            <a><input class="submit" type="submit" value="Crear" ></a>
+        </div>
+        </form>
+    </div>
+    <div class = "ultima-parte-footer">
+
+        <br>
+        <p class = "copyright-footer">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
+        
+    </div>    
+</body>
+</html>

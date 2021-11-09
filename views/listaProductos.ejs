@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head.ejs") %>
+    <title>Todos los Productos</title>
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+    <h1> Lista de Productos</h1>
+    <ul>
+        <% for( let i = 0; i < productos.length; i++) { %>
+            <li>
+                <a href ="/productos/<%= productos[i].nombre %>"> <%= productos[i].nombre %></a>
+                <form method="POST" action="/productos/delete/<%= productos[i].id %>?_method=DELETE">
+                <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% } %>    
+    </ul>
+
+    
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

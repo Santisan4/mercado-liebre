@@ -2,13 +2,14 @@ const express = require("express");
 const router = express.Router();
 const productosController = require("../controllers/productosController.js");
 
-// Detalle - Un producto 
+router.get("/", productosController.listaProductos);
 
-router.get('/:idProducto', productosController.detalle);
+router.get("/detalles/:idProducto", productosController.detalle);
+router.get("/productos/:idProducto/comentarios/:idComentario?", productosController.detalleComentarios);
 
-// Detalle - Comentario - Producto
+router.get("/crear", productosController.formProducto);
+router.post("/crear", productosController.crearProducto);
 
-router.get("/:idProducto/comentarios/:idComentario?", productosController.detalleComentarios);
-
+router.get("/editar/:idProducto", productosController.editarProducto);
 
 module.exports = router;

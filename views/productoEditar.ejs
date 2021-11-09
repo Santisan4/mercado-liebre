@@ -1,16 +1,15 @@
 <html lang="en">
     <head>
-        <title>Edit User</title>
-        <link rel="stylesheet" href="/css/registro-style.css">
+        <title>Editar Producto</title>
     </head>
     <%- include("partials/head.ejs") %>
     <body>
         <%- include("partials/header.ejs") %>
         <section class = "form-register">
-            <h4>Editando usuario <%= userToEdit.name %></h4>
-            <form method="POST" action="/usuarios/edit?_method=PUT">
+            <h4>Editando producto <%= productoAEditar.nombre %></h4>
+            <form method="POST" action="/productos/editar?_method=PUT">
                 <div class="div-registro">
-                    <input class ="controls" type ="text" name ="nombres" value ="<%= userToEdit.name %>">
+                    <input class ="controls" type ="text" name ="nombres" value ="<%= productoAEditar.nombre %>">
                 </div>
                 <input type="submit" value="Editar" >
             </form>
