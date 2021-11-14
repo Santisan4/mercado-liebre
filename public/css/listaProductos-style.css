@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+.lista-productos {
+    list-style: none;
+    display: flex;
+    
+}
+
+.producto-individual {
+    margin: auto;
+    background-color: #C7CADC;
+    border-radius: 5px;
+}
+
+.boton {
+    border-radius: 5px;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel ="icon" href="/img/logo-mercado-liebre.ico">
+        <title>Registro</title>
+        <link rel="stylesheet" href="/css/registro-style.css">
+    </head>
+    <%- include("../partials/head.ejs") %>
+    <body>
+        <div class = "contenedor-logo-registro">
+            <a href = "/"><img src = "/img/logo-mercado-liebre.svg" class = "logo-registro" width="200px"></a>
+        </div>   
+        <main>
+            <div class="container">
+                <section>
+                    <div class="columns is-centered">
+                        <div class="column is-6">
+                            <h1>Registro</h1>
+                            <% if(locals.errors) {
+                                errors.forEach(error => { %>
+                                <p class = "feedback is-danger"> <%= error.msg %></p>
+                            <% })
+                            } %>
+                            <form action="/users/" method="POST" enctype="multipart/form-data">
+                                <div class="field">
+                                    <label for="nombre">Nombre</label>
+                                    <div class="control">
+                                        <input type="text" name="nombre" >
+                                    </div>
+                                    <p class="feedback"></p>
+                                </div>
+    
+                                <div class="field">
+                                    <label for="apellido">Apellido</label>
+                                    <div class="control">
+                                        <input type="text" name="apellido">
+                                    </div>
+                                    <p class="feedback"></p>
+                                </div>
+    
+                                <div class="field">
+                                    <label for="email">Email</label>
+                                    <div class="control">
+                                        <input type="email" name="email">
+                                    </div>
+                                    <p class="feedback"></p>
+                                </div>
+                                <div class="field">
+                                    <label for="password">Password</label>
+                                    <div class="control">
+                                        <input type="password" name="password" >
+                                    </div>
+                                    <p class="feedback"></p>
+                                </div>
+                                <div class="field">
+                                    <label for="category">Categoría</label>
+                                    <div class="control">
+                                        <select name="category">
+                                            <option value="">Seleccione una opción</option>
+                                            <option value="vendedor" <%= locals.old && old.category === 'vendedor' ? 'selected' : '' ; %>>Vendedor</option>
+                                            <option value="comprador" <%= locals.old && old.category === 'comprador' ? 'selected' : '' ; %>>Comprador</option>
+                                        </select>
+                                    </div>
+                                    <p class="feedback"></p>
+                                </div>
+    
+                                <div class="field">
+                                    <div class="control">
+                                        <button type="submit" class ="boton-crear-usuario">Crear usuario</button>
+                                    </div>
+                                </div> 
+                            </form>  
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <div class = "ultima-parte-footer">
+            <br>
+            <p class = "copyright-footer">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
+            
+        </div>
+    </body>
+</html>

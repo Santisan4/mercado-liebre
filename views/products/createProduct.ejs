@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="/css/crearProducto-style.css">
-    <%- include("partials/head.ejs") %>
+    <link rel ="icon" href="/img/logo-mercado-liebre.ico">
+    <%- include("../partials/head.ejs") %>
     <title>Creacion de Producto</title>
 </head>
 <body>
-    <%- include("partials/header.ejs") %>
+    <%- include("../partials/header.ejs") %>
 
     <div class = "form-create-product">
-        <form action="/productos/crear" method="POST" >
+        <h2>Creacion de nuevo producto</h2>
+        <form action="/productos/crear" method="POST" enctype="multipart/form-data">
             <br>
             <label for="name">Nombre del producto</label>
             <br>
@@ -19,9 +21,9 @@
             <br>
             <input type="text" name = "description">
             <br>
-            <label for="image">Imagen del producto</label>
+            <label for="imagenProducto">Imagen del producto</label>
             <br>
-            <input type = "file" name ="image" accept=".jpg">
+            <input type ="file" name = "imagenProducto">
             <br>
             <label for="category">Categoria</label>
             <br>

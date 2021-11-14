@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { join } = require("path");
+const path = require("path");
 
 let productosController = {
 
@@ -21,16 +21,17 @@ let productosController = {
 
         let productos = JSON.parse(productosJSON);
 
-        res.render("listaProductos", {"productos": productos});
+        res.render("products/listaProductos", {"productos": productos});
     },
     formProducto: function (req, res) {
 
-        res.render("crearProducto");
+        res.render("products/createProduct");
     },
     crearProducto: function (req, res) {
         let producto = {
             nombre: req.body.name,
             descripcion: req.body.description,
+            imagen: req.file.originalname,
             categoria: req.body.category,
             precio: req.body.price
         }
@@ -42,7 +43,7 @@ let productosController = {
         }else {
             productos = JSON.parse(productosJSON);
         }
-
+    
         productos.push(producto);
 
         productosJSON = JSON.stringify(productos)

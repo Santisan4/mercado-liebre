@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include("partials/head.ejs") %>
+    <link rel="stylesheet" href="/css/listaProductos-style.css">
+    <%- include("../partials/head.ejs") %>
     <title>Todos los Productos</title>
 </head>
 <body>
     <%- include("partials/header.ejs") %>
     <h1> Lista de Productos</h1>
-    <ul>
-        <% for( let i = 0; i < productos.length; i++) { %>
-            <li>
+    <ul class = "lista-productos">
+        <% for ( let i = 0; i < productos.length; i++) { %>
+            <li class = "producto-individual">
                 <a href ="/productos/<%= productos[i].nombre %>"> <%= productos[i].nombre %></a>
+                <a img href="/productos/<%= productos[i].imagen %>" > </a>
                 <form method="POST" action="/productos/delete/<%= productos[i].id %>?_method=DELETE">
-                <button type="submit">Delete</button>
+                <button type="submit" class = "boton">Delete</button>
                 </form>
             </li>
         <% } %>    

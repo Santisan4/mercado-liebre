@@ -267,74 +267,6 @@ body{
 
 /*HTML REGISTER*/
 
-
- 
-
-/*NAVEGACION EN TABLET*/
-
-
-    /*HEADER*/
-
-
-
-    .main-header-top-bar{
-        display: flex;
-        flex-wrap:nowrap;
-        width: 100%;
-    }
-
-
-    .hamburger-button{
-        display: none;
-    }
-    .main-navbar{
-        display: flex;
-        justify-content: space-between;
-    }
-    .main-navbar ul{
-        display: flex;
-    }
-    .main-navbar li{
-        margin: 0 5px;
-
-    }
-
-
-     /*HEADER*/
-
-
-     .main{
-         width: 100%;
-     }
-    
-
-
-/*NAVEGACION EN DESKTOP*/
-
-
-    /*HEADER*/
-    
-    .main-header-top-bar{
-        display: flex;
-        flex-direction:row;
-        justify-content: space-evenly;
-        width: 100%;
-    }
-
-    
-
-
-    .left-navbar{
-        margin-right: 100px;
-
-    }
-
-    .main-navbar a{
-        font-size: 19px;
-        font-weight: 900;
-    }
-    
-    /*HEADER*/
      /*MAIN*/
     .main{
         width: 100%;
@@ -361,7 +293,6 @@ body{
         text-align: center;
     }
 
-     /*MAIN*/
 
 
 

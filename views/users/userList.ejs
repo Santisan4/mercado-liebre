@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Lista Usuarios</title>
+        <link rel= "stylesheet" href="/css/listaUsuarios-style.css">
+    </head>
+    <body>
+        <div class = "contenedor-logo">
+            <a href = "/"><img src = "/img/logo-mercado-liebre.svg" class = "logo"></a>
+        </div>    
+        <main>
+            <div class="container">
+                <h1>User List</h1>
+                <ul>
+                    <% for (let i = 0; i < users.length; i++) { %>
+                        <li>
+                            <a href="users/detail/<%= users[i].id %>"><%= users[i].nombre %> </a>
+                        </li>
+                    <% } %>
+                </ul>
+                
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/detalleUsuario-style.css">
+</head>
+<body>
+    <div class = "top-navBar">
+        <div class = "contenedor-logo">
+            <a href = "/"><img src = "/img/logo-mercado-liebre.svg" class = "logo"></a>
+        </div>    
+    </div>
+    <main>
+        <% if(user) { %>
+            <%- include('user', { user }) %>
+        <% } else { %>
+            <h2>No encontramos ese grupo</h2>
+        <% } %>
+    </main>
+</body>
+</html>

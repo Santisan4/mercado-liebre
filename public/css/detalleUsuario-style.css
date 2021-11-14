@@ -248,19 +248,24 @@ header nav a:hover {
     background-color: #BAF2E1;
 }
 
-
 main {
     padding: 1rem;
 }
 
-.contenedor-logo-registro {
+.contenedor-logo{
+    width: 100%;
     background-color: #EAC926;
 }
-
-.boton-crear-usuario {
-    border-radius: 8px;
+.logo {
+    width: 200px;
 }
 
-.logo-registro {
-    margin-left: 770px;
+.top-navBar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
+    
 }
+

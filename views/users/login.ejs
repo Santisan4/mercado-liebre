@@ -3,8 +3,9 @@
     <head>
         <title>Login</title>
         <link rel="stylesheet" href="/css/login-style.css">
+        <link rel ="icon" href="/img/logo-mercado-liebre.ico">
     </head>
-    <%- include("partials/head.ejs") %>
+    <%- include("../partials/head.ejs") %>
     <body>
         <div class = "contenedor-logo-registro">
             <a href = "/"><img src = "/img/logo-mercado-liebre.svg" class = "logo-registro" width="200px"></a>
@@ -12,10 +13,10 @@
         <section class = "form-register">
             <h4>Iniciar Sesion</h4>
             <input class ="controls" type ="email" name ="correo" id ="correo" placeholder="Ingrese su Correo">
-            <input class ="controls" type ="password" name ="correo" id ="correo" placeholder="Ingrese su Contraseña">
+            <input class ="controls" type ="password" name ="password" id ="password" placeholder="Ingrese su Contraseña">
             <a href="/"><button class="botons" type="button" > Iniciar Sesion</button></a>
             <p>¿Eres nuevo en Mercado Liebre? </p>
-            <p><a href="/usuarios/register">Crea tu cuenta de Mercado Liebre</a></p>
+            <p><a href="/users/register">Crea tu cuenta de Mercado Liebre</a></p>
         </section>
         <div class = "ultima-parte-footer">
 
