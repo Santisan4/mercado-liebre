@@ -1,7 +1,7 @@
 [
     {
         "nombre": "Heladera",
-        "descripcion": "Coreana",
+        "descripcion": "Hielera",
         "categoria": "Heladera",
         "precio": "$20000"
     },
@@ -24,5 +24,40 @@
         "imagen": "lavarropas.jpeg",
         "categoria": "Electrodomestico",
         "precio": "$30000"
+    },
+    {
+        "nombre": "Peluche Stich",
+        "descripcion": "Peluche de algodón",
+        "imagen": "peluche.png.webp",
+        "categoria": "Jugueteria",
+        "precio": "$300"
+    },
+    {
+        "nombre": "Stich peluche",
+        "descripcion": "Algodón 100%",
+        "imagen": "producto-1637010460584.webp",
+        "categoria": "Peluches",
+        "precio": "$1000"
+    },
+    {
+        "nombre": "Peluche Stich Original",
+        "descripcion": "Algodón 100%",
+        "imagen": "producto-1637010590450.webp",
+        "categoria": "Peluches",
+        "precio": "$100000"
+    },
+    {
+        "nombre": "STich peluche",
+        "descripcion": "algodón peruano",
+        "imagen": "producto-1637010692747.webp",
+        "categoria": "Peluche",
+        "precio": "$1000"
+    },
+    {
+        "nombre": "prueba1",
+        "descripcion": "prueba1",
+        "imagen": "producto-1637011714776.png",
+        "categoria": "prueba1",
+        "precio": "prueba1"
     }
 ]

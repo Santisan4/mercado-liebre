@@ -22,10 +22,10 @@ const upload = multer({ storage: storage })
 router.get("/", productosController.listaProductos);
 
 router.get("/detalles/:idProducto", productosController.detalle);
-router.get("/productos/:idProducto/comentarios/:idComentario?", productosController.detalleComentarios);
+router.get("/:idProducto/comentarios/:idComentario?", productosController.detalleComentarios);
 
 router.get("/crear", productosController.formProducto);
-router.post("/crear", upload.single("imagenProducto"), productosController.crearProducto);
+router.post("/crear", upload.single("productImage"), productosController.crearProducto);
 
 router.get("/editar/:idProducto", productosController.editarProducto);
 

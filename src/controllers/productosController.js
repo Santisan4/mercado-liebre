@@ -5,7 +5,11 @@ let productosController = {
 
     detalle: function(req, res){
 
-        res.send("Bienvenidos al detalle del producto " + req.params.idProducto);
+        let productosJSON = fs.readFileSync("productos.json", {encoding: "utf-8"});
+
+        let productos = JSON.parse(productosJSON);
+
+        res.render("products/detalleProducto", {"productos": productos})
 
     },
     detalleComentarios: function(req, res) {
@@ -28,21 +32,24 @@ let productosController = {
         res.render("products/createProduct");
     },
     crearProducto: function (req, res) {
-        let producto = {
-            nombre: req.body.name,
-            descripcion: req.body.description,
-            imagen: req.file.originalname,
-            categoria: req.body.category,
-            precio: req.body.price
-        }
-
-        let productosJSON = fs.readFileSync("productos.json", {encoding: "utf-8"});
-        let productos;
-        if(productosJSON == ""){
-            productos = []
-        }else {
-            productos = JSON.parse(productosJSON);
-        }
+    
+        if(req.file) {
+            let producto = {
+                id: req.body.id,
+                nombre: req.body.nombre,
+                descripcion: req.body.description,
+                imagen: req.file.filename,
+                categoria: req.body.category,
+                precio: req.body.price
+            }
+            
+            let productosJSON = fs.readFileSync("productos.json", {encoding: "utf-8"});
+            let productos;
+            if(productosJSON == ""){
+                productos = []
+            }else {
+                productos = JSON.parse(productosJSON);
+            }
     
         productos.push(producto);
 
@@ -51,16 +58,24 @@ let productosController = {
         fs.writeFileSync("productos.json", productosJSON)
 
         res.redirect("/productos")
+
+        } else {
+
+            res.render("products/createProduct");
+
+        }
+
+        
     },
     editarProducto: function (req, res) {
-        let idProducto = req.params.idProducto;
+        let detalleProducto = req.params.idProducto;
 
         let productosBase = fs.readFileSync("productos.json", {encoding: "utf-8"})
         let productos = JSON.parse(productosBase);
 
         let productoAEditar = productos[idProducto];
 
-        res.render("productoEditar", {productoAEditar : productoAEditar})
+        res.render("products/productoEditar", {productoAEditar : productoAEditar})
 
     },
 

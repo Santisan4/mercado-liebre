@@ -10,22 +10,16 @@
     <h1> Lista de Productos</h1>
     <ul class = "lista-productos">
         <% for ( let i = 0; i < productos.length; i++) { %>
-            <div class = "container-card-image">
-                <img href ="">
-            </div>
-            <li class = "producto-individual">
-                <a href ="/productos/<%= productos[i].nombre %>"> <%= productos[i].nombre %></a>
-                <p><%= productos[i].descripcion %></p>
-                <p><%= productos[i].categoria %></p>
-                <p><%= productos[i].precio %></p>
-                <form method="POST" action="/productos/delete/<%= productos[i].id %>?_method=DELETE">
-                <button type="submit" class = "boton">Delete</button>
-                </form>
-            </li>
+            <div class="card" style="width: 18rem;">
+                <img src="/img/productos/<%= productos.imagen ? productos.imagen : 'default-image.jpeg' %>" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title"><%= productos[i].nombre %></h5>
+                  <p class="card-text"> <%= productos[i].descripcion %></p>
+                  <a href="productos/detalle/<%= productos[i].id %> " class="btn btn-primary">Ver Detalle</a>
+                </div>
+              </div>
         <% } %>    
-    </ul>
-
-    
+    </ul>    
     <%- include("../partials/footer.ejs") %>
 </body>
 </html>
