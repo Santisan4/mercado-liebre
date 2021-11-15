@@ -2,18 +2,25 @@
     box-sizing: border-box;
 }
 
+h1 {
+    padding: 10px;
+}
+
 .lista-productos {
     list-style: none;
+    padding: 10px;
     display: flex;
     
 }
 
 .producto-individual {
     margin: auto;
-    background-color: #C7CADC;
-    border-radius: 5px;
+    background-color: #FFF;
+    padding: 10px;
+    border: solid black 1px;
 }
 
 .boton {
     border-radius: 5px;
+    background-color: red;
 }

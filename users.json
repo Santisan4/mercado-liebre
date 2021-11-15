@@ -1,1 +1,23 @@
-[{},{}]
+[
+    {
+        "nombre": "santiago",
+        "apellido": "sanchez",
+        "email": "sant97@hotmail.com.ar",
+        "password": "39438278",
+        "category": "vendedor"
+    },
+    {
+        "nombre": "Ezequiel",
+        "apellido": "Sanchez",
+        "email": "eze@gmail.com",
+        "password": "123",
+        "category": "vendedor"
+    },
+    {
+        "nombre": "Francina",
+        "apellido": "Oses",
+        "email": "franci@gmail.com",
+        "password": "asd123",
+        "category": "comprador"
+    }
+]

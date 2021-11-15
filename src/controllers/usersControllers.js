@@ -24,12 +24,14 @@ let usersControllers = {
 
     detalle: (req, res) => {
 
+        
+
     },
 
     create: (req, res) => {
         let usuario = {
-            nombre: req.body.firstName,
-            apellido: req.body.lastName,
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
             email: req.body.email,
             password: req.body.password,
             category: req.body.category
@@ -46,7 +48,7 @@ let usersControllers = {
 
         usuarios.push(usuario);
         
-        usuariosJSON = JSON.stringify(usuarios);
+        usuariosJSON = JSON.stringify(usuarios, null, 4);
 
         fs.writeFileSync("users.json", usuariosJSON);
 

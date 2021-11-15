@@ -6,13 +6,18 @@
     <title>Todos los Productos</title>
 </head>
 <body>
-    <%- include("partials/header.ejs") %>
+    <%- include("../partials/header.ejs") %>
     <h1> Lista de Productos</h1>
     <ul class = "lista-productos">
         <% for ( let i = 0; i < productos.length; i++) { %>
+            <div class = "container-card-image">
+                <img href ="">
+            </div>
             <li class = "producto-individual">
                 <a href ="/productos/<%= productos[i].nombre %>"> <%= productos[i].nombre %></a>
-                <a img href="/productos/<%= productos[i].imagen %>" > </a>
+                <p><%= productos[i].descripcion %></p>
+                <p><%= productos[i].categoria %></p>
+                <p><%= productos[i].precio %></p>
                 <form method="POST" action="/productos/delete/<%= productos[i].id %>?_method=DELETE">
                 <button type="submit" class = "boton">Delete</button>
                 </form>
@@ -21,6 +26,6 @@
     </ul>
 
     
-    <%- include("partials/footer.ejs") %>
+    <%- include("../partials/footer.ejs") %>
 </body>
 </html>

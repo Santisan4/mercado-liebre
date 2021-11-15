@@ -9,16 +9,19 @@
             <a href = "/"><img src = "/img/logo-mercado-liebre.svg" class = "logo"></a>
         </div>    
         <main>
-            <div class="container">
-                <h1>User List</h1>
-                <ul>
-                    <% for (let i = 0; i < users.length; i++) { %>
-                        <li>
-                            <a href="users/detail/<%= users[i].id %>"><%= users[i].nombre %> </a>
-                        </li>
-                    <% } %>
-                </ul>
-                
+            <h1>User List</h1>
+            <div class= "container-cards-users"> 
+                <div>
+                    <ul>
+                        <% for (let i = 0; i < users.length; i++) { %>
+                            <li class = "container-user" id ="item">
+                                <a href="users/detail/<%= users[i].id %>" class=><%= users[i].nombre %> </a>
+                                <p class=><%= users[i].email %></p>
+                                <a href="#" class= "btn"> Delete</a>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
             </div>
         </main>
     </body>

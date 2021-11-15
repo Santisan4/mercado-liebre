@@ -46,7 +46,7 @@ let productosController = {
     
         productos.push(producto);
 
-        productosJSON = JSON.stringify(productos)
+        productosJSON = JSON.stringify(productos, null, 4)
 
         fs.writeFileSync("productos.json", productosJSON)
 

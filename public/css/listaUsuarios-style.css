@@ -263,3 +263,20 @@ main {
 .boton-crear-usuario {
     border-radius: 8px;
 }
+
+.btn {
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.container-user {
+    border: solid black 1px;
+    padding: 10px;
+    background-color: #FFF;
+}
+
+#item {
+    list-style: none;
+}

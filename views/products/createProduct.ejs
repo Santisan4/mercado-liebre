@@ -7,38 +7,60 @@
     <title>Creacion de Producto</title>
 </head>
 <body>
-    <%- include("../partials/header.ejs") %>
-
+    <div class = "container-logo">
+        <a href = "/"><img src = "/img/logo-mercado-liebre.svg" class = "image-logo" width="200px"></a>
+    </div> 
+    <br>
     <div class = "form-create-product">
-        <h2>Creacion de nuevo producto</h2>
-        <form action="/productos/crear" method="POST" enctype="multipart/form-data">
-            <br>
-            <label for="name">Nombre del producto</label>
-            <br>
-            <input type="text" name ="name" placeholder="Ingrese nombre del producto ">
-            <br>
-            <label for="description">Descrición</label>
-            <br>
-            <input type="text" name = "description">
-            <br>
-            <label for="imagenProducto">Imagen del producto</label>
-            <br>
-            <input type ="file" name = "imagenProducto">
-            <br>
-            <label for="category">Categoria</label>
-            <br>
-            <input type="text" name ="category">
-            <br>
-            <label for="price">Precio</label>
-            <br>
-            <input type="text" name="price">   
-        <br>
-        <div>
-            <br>
-            <a><input class="submit" type="submit" value="Crear" ></a>
+        <div class = "columns is-centered">
+            <div class="column is-6">
+                <h2>Creacion de nuevo producto</h2>
+                <form action="/productos/crear" method="POST" enctype="multipart/form-data">
+                    <div class="field">
+                        <label for="nombre">Nombre del producto</label>
+                        <div class="control">
+                            <input type="text" name="nombre">
+                        </div>
+                        <p class="feedback"></p>
+                    </div>
+                    <div class="field">
+                        <label for="description">Descripcion</label>
+                        <div class="control">
+                            <input type="text" name="description" >
+                        </div>
+                        <p class="feedback"></p>
+                    </div>
+                    <div class="field">
+                        <label for="imageProduct">Imagen del producto</label>
+                        <div class="control">
+                            <input type="file" name="imageProduct" >
+                        </div>
+                        <p class="feedback"></p>
+                    </div>
+                    <div class="field">
+                        <label for="category">Categoria</label>
+                        <div class="control">
+                            <input type="text" name="category" >
+                        </div>
+                        <p class="feedback"></p>
+                    </div>
+                    <div class="field">
+                        <label for="price">Precio</label>
+                        <div class="control">
+                            <input type="text" name="price" >
+                        </div>
+                        <p class="feedback"></p>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button type="submit" class ="boton">Crear producto</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        </form>
     </div>
+    <br>
     <div class = "ultima-parte-footer">
 
         <br>
