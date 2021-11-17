@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { validationResult } = require("express-validator");
 
 let productosController = {
 
@@ -32,37 +33,46 @@ let productosController = {
         res.render("products/createProduct");
     },
     crearProducto: function (req, res) {
+        let errors = validationResult(req);
+        
+        if(errors.isEmpty()) {
+            if(req.file) {
+                let producto = {
+                    id: req.body.id,
+                    nombre: req.body.nombre,
+                    descripcion: req.body.description,
+                    imagen: req.file.filename,
+                    categoria: req.body.category,
+                    precio: req.body.price
+                }
+                
+                let productosJSON = fs.readFileSync("productos.json", {encoding: "utf-8"});
+                let productos;
+                if(productosJSON == ""){
+                    productos = []
+                }else {
+                    productos = JSON.parse(productosJSON);
+                }
+        
+            productos.push(producto);
     
-        if(req.file) {
-            let producto = {
-                id: req.body.id,
-                nombre: req.body.nombre,
-                descripcion: req.body.description,
-                imagen: req.file.filename,
-                categoria: req.body.category,
-                precio: req.body.price
-            }
-            
-            let productosJSON = fs.readFileSync("productos.json", {encoding: "utf-8"});
-            let productos;
-            if(productosJSON == ""){
-                productos = []
-            }else {
-                productos = JSON.parse(productosJSON);
-            }
+            productosJSON = JSON.stringify(productos, null, 4)
     
-        productos.push(producto);
-
-        productosJSON = JSON.stringify(productos, null, 4)
-
-        fs.writeFileSync("productos.json", productosJSON)
-
-        res.redirect("/productos")
+            fs.writeFileSync("productos.json", productosJSON)
+    
+            res.redirect("/productos")
+    
+            } else {
+    
+                res.render("products/createProduct");
+    
+            }
 
         } else {
-
-            res.render("products/createProduct");
-
+            res.render("products/createProduct", {
+                errors: errors.mapped(),
+                old: req.body
+            })
         }
 
         

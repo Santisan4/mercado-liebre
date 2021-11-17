@@ -2,8 +2,8 @@
     {
         "nombre": "Santiago",
         "apellido": "Sanchez",
-        "email": "prueba@hotmail.com",
-        "password": "falsa123",
+        "email": "sant97@hotmail.com.ar",
+        "password": "$2a$10$XevC2MCa/Zz3RM/wBexbtuwYoVPTaFZvm9cni855TNlKKzTuxU3KC",
         "category": "vendedor"
     }
 ]

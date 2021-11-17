@@ -14,49 +14,83 @@
     <div class = "form-create-product">
         <div class = "columns is-centered">
             <div class="column is-6">
-                <h2>Creacion de nuevo producto</h2>
-                <form action="/productos/crear" method="POST" enctype="multipart/form-data">
-                    <div class="field">
-                        <label for="nombre">Nombre del producto</label>
-                        <div class="control">
-                            <input type="text" name="nombre">
+                <h2>Formulario de nuevo producto</h2>
+                <form action="/productos/crear" method="POST" enctype="multipart/form-data" >
+
+                    <div class="mb-3">
+                        <label for="nombre">Nombre del Producto</label>
+                        <input  
+                            type="text"
+                            name="nombre" 
+                            class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : 'null' %>"
+                            value="<%= locals.old && old.nombre ? old.nombre : '' %>">
+                        <% if (locals.errors && errors.nombre) { %>
+                        <div class="invalid-feedback">
+                            <%= errors.nombre.msg %>
                         </div>
-                        <p class="feedback"></p>
+                    <% } %>  
                     </div>
-                    <div class="field">
+
+                    <div class="mb-3">
                         <label for="description">Descripcion</label>
-                        <div class="control">
-                            <input type="text" name="description" >
+                        <input  
+                            type="text"
+                            name="description" 
+                            class="form-control <%= locals.errors && errors.description ? 'is-invalid' : null %>"
+                            value="<%= locals.old && old.description ? old.description : '' %>">
+                        <% if (locals.errors && errors.description) { %>
+                        <div class="invalid-feedback">
+                            <%= errors.description.msg %>
                         </div>
-                        <p class="feedback"></p>
+                    <% } %>  
                     </div>
-                    <div class="field">
+
+                    <div class="mb-3">
                         <label for="productImage">Imagen del producto</label>
-                        <div class="control">
-                            <input type="file" name="productImage" >
-                        </div>
-                        <p class="feedback"></p>
+                        <input 
+                            type="file" 
+                            name="productImage"
+                            class="form-control <%= locals.errors && errors.productImage ? 'is-invalid' : null %>">
+                        <% if (locals.errors && errors.productImage) { %>
+                            <div class="invalid-feedback">
+                                <%= errors.productImage.msg %>
+                            </div>
+                        <% } %>  
                     </div>
-                    <div class="field">
+                    <div class="mb-3">
                         <label for="category">Categoria</label>
-                        <div class="control">
-                            <input type="text" name="category" >
+                        <input  
+                            type="text"
+                            name="category" 
+                            class="form-control <%= locals.errors && errors.category ? 'is-invalid' : null %>"
+                            value="<%= locals.old && old.category ? old.category : '' %>">
+                        <% if (locals.errors && errors.category) { %>
+                        <div class="invalid-feedback">
+                            <%= errors.category.msg %>
                         </div>
-                        <p class="feedback"></p>
+                        <% } %>  
                     </div>
-                    <div class="field">
+
+                    <div class="mb-3">
                         <label for="price">Precio</label>
-                        <div class="control">
-                            <input type="text" name="price" >
+                        <input  
+                            type="text"
+                            name="price" 
+                            class="form-control <%= locals.errors && errors.price ? 'is-invalid' : null %>"
+                            value="<%= locals.old && old.price ? old.price : '' %>">
+                        <% if (locals.errors && errors.price) { %>
+                        <div class="invalid-feedback">
+                            <%= errors.price.msg %>
                         </div>
-                        <p class="feedback"></p>
+                    <% } %>  
                     </div>
-                    <div class="field">
-                        <div class="control">
-                            <button type="submit" class ="boton">Crear producto</button>
-                        </div>
+
+                    <div class="mb-3">
+                        <button class="btn btn-primary" type="submit">Crear producto</button>
                     </div>
+                    
                 </form>
+                    
             </div>
         </div>
     </div>

@@ -9,15 +9,69 @@
     <body>
         <div class = "contenedor-logo-registro">
             <a href = "/"><img src = "/img/logo-mercado-liebre.svg" class = "logo-registro" width="200px"></a>
-        </div>   
-        <section class = "form-register">
-            <h4>Iniciar Sesion</h4>
-            <input class ="controls" type ="email" name ="correo" id ="correo" placeholder="Ingrese su Correo">
-            <input class ="controls" type ="password" name ="password" id ="password" placeholder="Ingrese su Contraseña">
-            <a href="/"><button class="botons" type="button" > Iniciar Sesion</button></a>
-            <p>¿Eres nuevo en Mercado Liebre? </p>
-            <p><a href="/users/register">Crea tu cuenta de Mercado Liebre</a></p>
-        </section>
+        </div>
+        <div class="columns is-centered">
+            <div class="column is-6">
+                <h1>Iniciar Sesion</h1>
+
+                <% if (typeof errors != 'undefined') { %>
+                        <p style="color: red">ERROR</p>
+                        <ul>
+                            <% for(let i = 0; i < errors.length; i++) { %>
+                                <li>
+                                    <%= errors[i].msg %>
+                                </li>
+                            <% } %>
+                        </ul>
+                <% } %>
+                         
+                <form method="POST" action="/users/login">
+
+                    <div class="mb-3">
+                        <label for="email">Email: </label>
+                        <input  
+                            type="text" 
+                            name="email"
+                            class="form-control <%= locals.errors && errors.email ? 'is-invalid' : 'null' %>"
+                            value="<%= locals.old && old.email ? old.email : '' %>">
+                        <% if (locals.errors && errors.email) { %>
+                        <div class="invalid-feedback">
+                            <%= errors.email.msg %>
+                        </div>
+                        <% } %> 
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password">Contraseña: </label>
+                        <input 
+                            type="password" 
+                            name="password"
+                            class="form-control <%= locals.errors && errors.password ? 'is-invalid' : 'null' %>">
+                        <% if (locals.errors && errors.password) { %>
+                        <div class="invalid-feedback">
+                            <%= errors.password.msg %>
+                        </div>
+                        <% } %> 
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="recordame">Recordame: </label>
+                        <input type="checkbox" name="recordame">
+            
+                    </div>
+
+                    <div class="mb-3">
+                        <button class="btn btn-primary" type="submit" >Ingresar</button>
+                    </div>
+                    <div>
+                        <p>¿Eres nuevo en Mercado Liebre? </p>
+                        <p><a href="/users/register">Crea tu cuenta de Mercado Liebre</a></p>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    
         <div class = "ultima-parte-footer">
 
             <br>

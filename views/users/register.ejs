@@ -15,60 +15,85 @@
                 <section>
                     <div class="columns is-centered">
                         <div class="column is-6">
-                            <h1>Registro</h1>
-                            <% if(locals.errors) {
-                                errors.forEach(error => { %>
-                                <p class = "feedback is-danger"> <%= error.msg %></p>
-                            <% })
-                            } %>
-                            <form action="/users/" method="POST" >
-                                <div class="field">
-                                    <label for="nombre">Nombre</label>
-                                    <div class="control">
-                                        <input type="text" name="nombre" >
+                            <h1>Formulario de Registro</h1> 
+                            <form action="/users/" method="POST">
+                                
+                                <div class="mb-3">
+                                    <label for="nombre"><b>Nombre:</b></label>
+                                    <input  
+                                        type="text"
+                                        name="nombre" 
+                                        class="form-control <%= locals.errors && errors.nombre ? 'is-invalid' : 'null' %>"
+                                        value="<%= locals.old && old.nombre ? old.nombre : '' %>">
+                                    <% if (locals.errors && errors.nombre) { %>
+                                    <div class="invalid-feedback">
+                                        <%= errors.nombre.msg %>
                                     </div>
-                                    <p class="feedback"></p>
+                                    <% } %>  
                                 </div>
-    
-                                <div class="field">
-                                    <label for="apellido">Apellido</label>
-                                    <div class="control">
-                                        <input type="text" name="apellido">
+
+                                <div class="mb-3">
+                                    <label for="apellido"><b>Apellido:</b></label>
+                                    <input  
+                                        type="text"
+                                        name="apellido" 
+                                        class="form-control <%= locals.errors && errors.apellido ? 'is-invalid' : 'null' %>"
+                                        value="<%= locals.old && old.apellido ? old.apellido : '' %>">
+                                    <% if (locals.errors && errors.apellido) { %>
+                                    <div class="invalid-feedback">
+                                        <%= errors.apellido.msg %>
                                     </div>
-                                    <p class="feedback"></p>
+                                    <% } %>  
                                 </div>
-    
-                                <div class="field">
-                                    <label for="email">Email</label>
-                                    <div class="control">
-                                        <input type="email" name="email">
+
+                                <div class="mb-3">
+                                    <label for="email"><b>Email:</b></label>
+                                    <input  
+                                        type="text"
+                                        name="email" 
+                                        class="form-control <%= locals.errors && errors.email ? 'is-invalid' : 'null' %>"
+                                        value="<%= locals.old && old.email ? old.email : '' %>">
+                                    <% if (locals.errors && errors.email) { %>
+                                    <div class="invalid-feedback">
+                                        <%= errors.email.msg %>
                                     </div>
-                                    <p class="feedback"></p>
+                                    <% } %>  
                                 </div>
-                                <div class="field">
-                                    <label for="password">Password</label>
-                                    <div class="control">
-                                        <input type="password" name="password" >
+
+                                <div class="mb-3">
+                                    <label for="password"><b>Contraseña:</b></label>
+                                    <input  
+                                        type="password"
+                                        name="password" 
+                                        class="form-control <%= locals.errors && errors.password ? 'is-invalid' : 'null' %>"
+                                        value="<%= locals.old && old.password ? old.password : '' %>">
+                                    <% if (locals.errors && errors.password) { %>
+                                    <div class="invalid-feedback">
+                                        <%= errors.password.msg %>
                                     </div>
-                                    <p class="feedback"></p>
+                                     <% } %>  
                                 </div>
-                                <div class="field">
-                                    <label for="category">Categoría</label>
-                                    <div class="control">
-                                        <select name="category">
-                                            <option value="">Seleccione una opción</option>
-                                            <option value="vendedor" <%= locals.old && old.category === 'vendedor' ? 'selected' : '' ; %>>Vendedor</option>
-                                            <option value="comprador" <%= locals.old && old.category === 'comprador' ? 'selected' : '' ; %>>Comprador</option>
-                                        </select>
-                                    </div>
-                                    <p class="feedback"></p>
+
+                                <div class="mb-3">
+                                    <label for="category"><b>Categoría:</b></label>
+                                    <select name ="category" class="form-select <%= locals.errors && errors.category ? 'is-invalid' : 'null' %>">
+                                        <option value="">Seleccione una categoria</option>
+                                        <option value="vendedor" <%= locals.old && old.category === 'vendedor' ? 'selected' : '' ; %>>Vendedor</option>
+                                        <option value="comprador" <%= locals.old && old.category === 'comprador' ? 'selected' : '' ; %>>Comprador</option>  
+                                    </select>
+                                    <% if (locals.errors && errors.category) { %>
+                                        <div class="invalid-feedback">
+                                            <%= errors.category.msg %>
+                                        </div>
+                                    <% } %> 
+                                  </div>
+                                <div>
+                                    <p>¿Ya tienes cuenta en Mercado Liebre? </p>
+                                    <p><a href="/users/login">Ingresa con tu cuenta de Mercado Liebre</a></p>
+                                </div>  
+                                <div class="mb-3">
+                                    <button class="btn btn-primary" type="submit" >Crear Usuario</button>
                                 </div>
-    
-                                <div class="field">
-                                    <div class="control">
-                                        <button type="submit" class ="boton-crear-usuario">Crear usuario</button>
-                                    </div>
-                                </div> 
                             </form>  
                         </div>
                     </div>

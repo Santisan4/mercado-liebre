@@ -1,63 +1,16 @@
 [
     {
-        "nombre": "Heladera",
-        "descripcion": "Hielera",
-        "categoria": "Heladera",
+        "nombre": "Peluche",
+        "descripcion": "Stich",
+        "imagen": "producto-1637013001360.webp",
+        "categoria": "Jugueteria",
         "precio": "$20000"
     },
     {
-        "nombre": "Mansion",
-        "descripcion": "Lujosa",
-        "categoria": "Casas",
-        "precio": "$10000000"
-    },
-    {
-        "nombre": "Audi A5",
-        "descripcion": "Autos",
-        "imagen": "audi.jpeg",
-        "categoria": "Autos",
-        "precio": "$30200000"
-    },
-    {
-        "nombre": "Lavarropas",
-        "descripcion": "whirpool",
-        "imagen": "lavarropas.jpeg",
-        "categoria": "Electrodomestico",
-        "precio": "$30000"
-    },
-    {
-        "nombre": "Peluche Stich",
-        "descripcion": "Peluche de algodón",
-        "imagen": "peluche.png.webp",
-        "categoria": "Jugueteria",
-        "precio": "$300"
-    },
-    {
-        "nombre": "Stich peluche",
-        "descripcion": "Algodón 100%",
-        "imagen": "producto-1637010460584.webp",
-        "categoria": "Peluches",
-        "precio": "$1000"
-    },
-    {
-        "nombre": "Peluche Stich Original",
-        "descripcion": "Algodón 100%",
-        "imagen": "producto-1637010590450.webp",
-        "categoria": "Peluches",
-        "precio": "$100000"
-    },
-    {
-        "nombre": "STich peluche",
-        "descripcion": "algodón peruano",
-        "imagen": "producto-1637010692747.webp",
-        "categoria": "Peluche",
-        "precio": "$1000"
-    },
-    {
-        "nombre": "prueba1",
-        "descripcion": "prueba1",
-        "imagen": "producto-1637011714776.png",
-        "categoria": "prueba1",
-        "precio": "prueba1"
+        "nombre": "12",
+        "descripcion": "123123",
+        "imagen": "producto-1637013484465.png",
+        "categoria": "321",
+        "precio": "312312"
     }
 ]
