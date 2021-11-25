@@ -14,20 +14,73 @@
     <title>Todos los Productos</title>
 </head>
 <body>
+    <div style="background-color: #ebebeb;">
     <%- include("../partials/header.ejs") %>
-    <h1> Lista de Productos</h1>
-    <ul class = "lista-productos">
-        <% for ( let i = 0; i < productos.length; i++) { %>
-            <div class="card" style="width: 18rem;">
-                <img src="/img/productos/<%= productos.imagen ? productos.imagen : 'default-image.jpeg' %>" class="card-img-top">
-                <div class="card-body">
-                  <h5 class="card-title"><%= productos[i].nombre %></h5>
-                  <p class="card-text"> <%= productos[i].descripcion %></p>
-                  <a href="productos/detalle/<%= productos[i].id %> " class="btn btn-primary">Ver Detalle</a>
+        <div style="margin-left:40%;">
+            <h1> Nuestros productos</h1>
+        </div>
+
+        <div class="container-section-aside">
+
+            <aside class="container-aside">
+
+                <h5>Categorias</h3>
+                
+                <ul class="ul-categorias">
+                    <a href="#"><li>Hierros</li></a>
+                    <a href="#"><li>Bolsas</li></a>
+                    <a href="#"><li>Gorras</li></a>
+                    <a href="#"><li>Indumentaria</li></a>
+                    <a href="#"><li>Zapatos</li></a>
+                    <a href="#"><li>Guantes</li></a>
+                    <a href="#"><li>Accesorios</li></a>
+
+                </ul>
+                
+                <hr class="dropdown-divider">
+
+                <h5>Marcas</h5>
+
+                <ul style="list-style: none;">
+                    <li><label for="titleist"><input type="checkbox" name="titleist">Titleist</label></li>
+                    <li><label for="TaylordMade"><input type="checkbox" name="TaylordMade">TaylordMade</label></li>
+                    <li><label for="Callaway"><input type="checkbox" name="Callaway">Callaway</label></li>
+                    <li><label for="Nike"><input type="checkbox" name="Nike">Nike</label></li>
+                    <li><label for="Adidas"><input type="checkbox" name="Adidas">Adidas</label></li>
+                    <li><label for="Mizuno"><input type="checkbox" name="Mizuno">Mizuno</label></li>
+                    <li><label for="Ping"><input type="checkbox" name="Ping">Ping</label></li>
+                    
+                
+                </ul>
+            </aside>
+
+            <section class="container-section">
+
+                <div style="margin-left:40%;">
+                    <h5>Productos</h3>
                 </div>
-              </div>
-        <% } %>    
-    </ul>    
+
+               
+                <div class="articles">
+                     <% for (let producto of productos) { %>
+                    <div class="container-article">
+                        <div style="border: solid 1px black">
+                        <a><img src="/img/iconos-categorias/icono-bolsa.png" alt="" width="200px"></a>
+                        </div>
+                        <h3> <%= producto %> </h3>
+                        <p>$3000</p> 
+                        
+                    </div> 
+                    <% } %>    
+                </div>
+                    
+                
+            </section>
+
+           
+        </div>
+        
+    </div>    
     <%- include("../partials/footer.ejs") %>
 </body>
 </html>

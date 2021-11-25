@@ -35,12 +35,10 @@ const validations = [
 
 router.get("/", productosController.listaProductos);
 
-router.get("/detalles/:idProducto", productosController.detalle);
-router.get("/:idProducto/comentarios/:idComentario?", productosController.detalleComentarios);
-
 router.get("/crear", productosController.formProducto);
+
 router.post("/crear", upload.single("productImage"), validations, productosController.crearProducto);
 
-router.get("/editar/:idProducto", productosController.editarProducto);
+router.get("/:id", productosController.detalle);
 
 module.exports = router;

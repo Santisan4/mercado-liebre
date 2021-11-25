@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
+const db = require("../database/models");
 
 let productosController = {
 
@@ -13,20 +14,19 @@ let productosController = {
         res.render("products/detalleProducto", {"productos": productos})
 
     },
-    detalleComentarios: function(req, res) {
-
-        if(req.params.idComentario == undefined) {
-            res.send("Bienvenidos al comentario del producto " + req.params.idProducto);
-        }else {
-            res.send("Bienvenidos a los comentarios del producto " + req.params.idProducto + " y estas enfocado en el comentario " + req.params.idComentario)
-        }
-    },
     listaProductos: function (req, res) {
-        let productosJSON = fs.readFileSync("productos.json", {encoding: "utf-8"});
+    
+        db.productos.findAll().then((productos) => {
 
-        let productos = JSON.parse(productosJSON);
+                let listaProductos = [];
 
-        res.render("products/listaProductos", {"productos": productos});
+                for (producto of productos) {
+                    listaProductos.push(producto.nombre);
+                } 
+
+                console.log("ver: ", listaProductos);
+                res.render("products/listaProductos", {productos: listaProductos});
+            })
     },
     formProducto: function (req, res) {
 
@@ -77,17 +77,14 @@ let productosController = {
 
         
     },
-    editarProducto: function (req, res) {
-        let detalleProducto = req.params.idProducto;
 
-        let productosBase = fs.readFileSync("productos.json", {encoding: "utf-8"})
-        let productos = JSON.parse(productosBase);
+    detalle: function(req, res) {
+        db.Productos.findByPk(req.params.id)
+            .then(function(){
+                res.render("products/detalleProduct", { producto: producto })
+            });
 
-        let productoAEditar = productos[idProducto];
-
-        res.render("products/productoEditar", {productoAEditar : productoAEditar})
-
-    },
+    }
 
 }
 

@@ -3,14 +3,11 @@
     <head>
         <title>Login</title>
         <link rel="stylesheet" href="/css/login-style.css">
-        <link rel ="icon" href="/img/logo-mercado-liebre.ico">
     </head>
     <%- include("../partials/head.ejs") %>
     <body>
-        <div class = "contenedor-logo-registro">
-            <a href = "/"><img src = "/img/logo-mercado-liebre.svg" class = "logo-registro" width="200px"></a>
-        </div>
-        <div class="columns is-centered">
+        <%- include("../partials/header.ejs") %>
+        <div class="columns is-centered" style="background-color: #ebebeb">
             <div class="column is-6">
                 <h1>Iniciar Sesion</h1>
 
@@ -32,8 +29,7 @@
                         <input  
                             type="text" 
                             name="email"
-                            class="form-control <%= locals.errors && errors.email ? 'is-invalid' : 'null' %>"
-                            value="<%= locals.old && old.email ? old.email : '' %>">
+                            class="form-control <%= locals.errors && errors.email ? 'is-invalid' : 'null' %>">
                         <% if (locals.errors && errors.email) { %>
                         <div class="invalid-feedback">
                             <%= errors.email.msg %>
@@ -64,8 +60,8 @@
                         <button class="btn btn-primary" type="submit" >Ingresar</button>
                     </div>
                     <div>
-                        <p>¿Eres nuevo en Mercado Liebre? </p>
-                        <p><a href="/users/register">Crea tu cuenta de Mercado Liebre</a></p>
+                        <p>¿Eres nuevo? </p>
+                        <p><a href="/users/register">Crea tu cuenta de Tienda Golf Eos</a></p>
                     </div>
                     
                 </form>
@@ -75,7 +71,7 @@
         <div class = "ultima-parte-footer">
 
             <br>
-            <p class = "copyright-footer">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
+            <p class = "copyright-footer">Copyright © Tienda Golf Eos S.R.L.</p>
             
         </div>
     </body>

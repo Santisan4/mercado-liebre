@@ -3,9 +3,14 @@ const path = require("path");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 
+const db = require("../database/models");
+
+let horaActual = new Date().toISOString().
+replace(/T/, ' ').      // replace T with a space
+replace(/\..+/, '')     // delete the dot and everything after
+
 let usersControllers = {
     register: (req, res) =>{
-
         res.render("users/register")
     },
 
@@ -15,55 +20,78 @@ let usersControllers = {
     },
     
     processLogin : (req, res) => {
-        let errors = validationResult(req);
 
-        if (errors.isEmpty()) {
-            let archivoUsuario = fs.readFileSync("users.json", { encoding:"utf-8" });
+        let resultadoValidacion = validationResult(req)
+        
+        if (resultadoValidacion.errors.length <= 0) {
 
-            let usuarios;
-            if(archivoUsuario == "") {
-                usuarios = [];
-            } else {
-                usuarios = JSON.parse(archivoUsuario);
-            }
+            let emailRecibido = req.body.email;
+            let passwordRecibida = req.body.password;
+            let recordarUsuario = req.body.recordarUsuario;
             
-            let usuarioALoguearse;
+            let usuarioEncontrado 
+            
+            db.usuario.findAll()
+            .then(usuarios => {
+                usuarios.forEach(usuario => {
+                    if (usuario.email == emailRecibido) {
+                        usuarioEncontrado = usuario;
+                    }
+                })
 
-            for (let i = 0; i < usuarios.length; i++) {
-                if(usuarios[i].email == req.body.email && bcrypt.compareSync(req.body.password, usuarios[i].password)) {
-                    usuarioALoguearse = usuarios[i];
+                if(usuarioEncontrado == undefined){
+                    let error = [{
+                        value: "",
+                        msg: "Email inválido",
+                    }]
+                    res.render("./users/login", {data: {session: req.session, errores: error}})
                 }
-            }
 
-            if(usuarioALoguearse == undefined) {
-                return res.render("users/login", {errors : [
-                    {msg: 'Credenciales invalidas'}
-                ]});
-            } 
+                let passwordCorrecta = bcrypt.compareSync(passwordRecibida, usuarioEncontrado.contraseña);
 
-            req.session.usuarioLogueado = usuarioALoguearse;
+                if (!passwordCorrecta) {
+                    let error = [{
+                        value: "",
+                        msg: "Contraseña incorrecta",
+                    }]
+                    res.render("./users/login", {data: {session: req.session, errores: error}})
+                } else {
+        
+                    if (Boolean(recordarUsuario)) {
+                        req.session.cookie.maxAge = 1000 * 60 * 60 * 24 //Esto equivale a un día en milisegundos
+                    }
+        
+                    req.session.usuarioLogueado = true
 
-            if( req.body.recordame != undefined) {
-                res.cookie("recordame", usuarioALoguearse.email, { maxAge: 60000 } )
+                    db.usuario.findByPk(usuarioEncontrado.id)
+                    .then(usuario => {
+                        req.session.idUsuario = usuario.id
+                        req.session.admin = usuario.admin
 
-            }
+                        db.producto.findAll({where: {usuario_id: req.session.idUsuario, eliminado: null}})
+                        .then(productosUsuario => {
+                            req.session.productosUsuario = productosUsuario
+                            res.redirect('/')
+                        })
+                    })
 
-            res.send("success!");
+                }
+
+            })
 
         } else {
-            res.render("users/login", {
-                errors: errors.mapped(),
-                old: req.body
-            })
+            
+            res.render("./users/login", {data: {session: req.session, errores: resultadoValidacion.errors}})
         }
+          
     },
 
     list: (req, res) => {
-        let archivoJSON = fs.readFileSync("users.json", { encoding: "utf-8" });
+        // let archivoJSON = fs.readFileSync("users.json", { encoding: "utf-8" });
 
-        let users = JSON.parse(archivoJSON);
+        // let users = JSON.parse(archivoJSON);
 
-        res.render("users/userList", { "users" : users });
+        // res.render("users/userList", { "users" : users });
 
     },
 
@@ -74,43 +102,48 @@ let usersControllers = {
     },
 
     create: (req, res) => {
-        let errors = validationResult(req);
+        let resultadoValidacion = validationResult(req)
 
-        if (errors.isEmpty()){
-            let usuario = {
+
+        if (resultadoValidacion.errors.length <= 0) {
+            
+            let passwordHasheada = bcrypt.hashSync(req.body.password, 10);
+            
+            // Hora para los timestamps
+            let horaActual = new Date().toISOString().
+            replace(/T/, ' ').      // replace T with a space
+            replace(/\..+/, '')     // delete the dot and everything after
+            
+            let usuarioNuevo = {
+                created_at: horaActual,
+                updated_at: horaActual,
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
                 email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 10),
-                category: req.body.category
+                pass: passwordHasheada,
             }
+    
+            db.usuario.create(usuarioNuevo)
+            
+            res.redirect('/users/login')
 
-            let archivoUsuario = fs.readFileSync("users.json", { encoding:"utf-8" });
-
-            let usuarios;
-            if(archivoUsuario == "") {
-                usuarios = [];
-            } else {
-                usuarios = JSON.parse(archivoUsuario);
-            }
-
-            usuarios.push(usuario);
-                    
-            usuariosJSON = JSON.stringify(usuarios, null, 4);
-
-            fs.writeFileSync("users.json", usuariosJSON);
-
-            res.redirect("/users/login")
-        
         } else {
-            res.render("users/register", {
-                 errors : errors.mapped(),
-                 old: req.body
-            })
+            res.render("./users/register", {data: {session: req.session, errores: resultadoValidacion.errors}})
         }
-        
-    }
+         
+    },
 
+    profile: function (req, res) {
+        return res.render("users/userProfile", {
+            user: req.session.userLogged
+        });
+    },
+
+    logout: function (req, res) {
+        res.clearCookie("userEmail");
+        req.session.destroy();
+        return res.redirect("/");
+    }
 }
 
 module.exports = usersControllers;

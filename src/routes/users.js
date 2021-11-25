@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const { body } = require("express-validator");
 const usersControllers = require("../controllers/usersControllers.js");
-const bcrypt = require("bcryptjs");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 
@@ -31,7 +30,7 @@ const validateLogin = [
 
 router.get("/", usersControllers.list);
 
-router.get("/login", usersControllers.login);
+router.get("/login", guestMiddleware, usersControllers.login);
 router.post("/login", validateLogin, usersControllers.processLogin);
 
 router.get("/check", function(req, res) {
@@ -47,6 +46,10 @@ router.post("/", validateCreateForm, usersControllers.create);
 
 router.get("/list", usersControllers.list);
 
+//Perfil del usuario
+router.get("/profile", authMiddleware, usersControllers.profile);
+
+router.get("/logout", usersControllers.logout);
 
 router.get("/:id", usersControllers.detalle);
 

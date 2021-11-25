@@ -180,81 +180,15 @@ select { width: 100%; }
 .feedback.is-warning { color: var(--warning-color); }
 .feedback.is-danger { color: var(--danger-color); }
 
-/* Cards */
-
-.card {
-    display: flex;
-    margin-bottom: 1rem;
-    border-radius: var(--default-radius);
-
-    box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.15);
-}
-    .card-left {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        width: 30%;
-        padding: 1rem;
-        
-        background-color: #F6285B;
-        color: white;
-        text-align: center;
-        
-        border-radius: var(--default-radius) 0 0 var(--default-radius);
-    }
-
-    .card-left figure {
-        height: 120px;
-        width: 120px;
-        margin: 0;
-
-        overflow: hidden;
-    
-        border-radius: 50%;
-        background-color: white;
-    }
-
-    .card-left figure img {
-        width: 100%;
-    }
-
-    .card-content {
-        width: 70%;
-        padding: 1rem;
-
-        background-color: #E6E6E6;
-        
-        border-radius: 0 var(--default-radius) var(--default-radius) 0;
-    }
-
-header {
-    background-color: #58355E;
-    color: white;
-    padding: 1rem;
-}
-
-header nav a {
-    display: inline-block;
-    background-color: #7AE7C7;
-    color: #333;
-    padding: var(--default-padding);
-    margin: 0 var(--default-margin);
-    border-radius: var(--default-radius);
-}
 
 header nav a:hover {
-    background-color: #BAF2E1;
+    background-color: #ebebeb;
 }
 
 
 main {
     padding: 1rem;
-}
-
-.contenedor-logo-registro {
-    background-color: #EAC926;
+    background-color: #ebebeb;
 }
 
 .boton-crear-usuario {
@@ -262,5 +196,5 @@ main {
 }
 
 .logo-registro {
-    margin-left: 770px;
+    margin-left: 770 px;
 }

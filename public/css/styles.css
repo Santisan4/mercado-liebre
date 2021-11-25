@@ -2,223 +2,27 @@
     box-sizing: border-box;
 }
 
-/*HEADER*/
-.main-header{
-    background-color: #EAC926;
-    font-family: 'Roboto';
-    padding: 5px;
+#carouselExampleIndicators {
+    padding: 0;
+    max-width: none;
     width: 100%;
-    flex-direction: column;
-}
-.top-navBar{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-    padding: 10px;
-    
-}
-#contenedor-barra-busqueda-header{
-    display: flex;
-    width: 500px;
-    height: 36px;
-    margin-top: 5px;
-}
-.contenedor-logo{
-    width: 200px;
-}
-
-.copy-header{
-    display: flex;
-    text-align: center;
-    font-family: "roboto";
-    width: 310px;
-    margin-top: 10px;
-}
-
-
-.navBar {
-    overflow: hidden;
-    background-color: #EAC926;
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
 }
 
-.elementos-izquierda-navBar {
-    display: flex;
-}
-.elementos-derecha-navBar {
-    display: flex;
-}
-
-.navBar a {
-    color: black;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-}
-  
-.logo{
-    width: 100%;    
-}
-
-.input{
-    width: 470px;
-}
-
-/* FIN HEADER */
-
-body{
-    font-family: "roboto";
-}
-
+/* MAIN */
 
 .banner{
     width: 100%;
 }
-.oferta{
-    font-size: 16px;
-    font-family: "roboto";
-    color: #39b54a;
-    text-align: left;
+
+.container-main{
+    border: solid grey 1px;
+    
 }
-
-.precio{
-    font-size: 18px;
-    flex-grow: 0.30;
-    text-align: center;
-}
-
-
-.descripcion{
-    font-size: 16px;
-    font-family: "roboto";
-    text-align: left;
-    margin-left: 20px;
-
-}
-
-#compra{
-    font-size: 24px;
-    display: inline-block;
-    margin: auto;
-    color: black;
-}
-
-.titulo{
-    font-size: 24px;
-    font-family: 'Roboto'
-}
-
-.cuerpo-texto{
-    font-size: 12px;
-}
-
-
-.lista-oferta-precio{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.imagen{
-    border: solid 1px blac#ebebeb;
-    width: 300px;
-}
-
-.logo-envio{
-    display: block;
-    font-size: 16px;
-    padding: 5px;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #39b54a;
-    background-color: #FFF;
-    border-radius: 50%;
-    position: absolute;
-    right: 20px;
-    top: -15px;
-}
-
-.articulo{
-    border: solid 1px #ebebeb;
-    border-radius: 8px;
-    margin: auto;
-    box-shadow: 0px 0px 10px rgb(100,100,100);
-    margin-bottom: 10px;
-}
-
-.oferta{
-    flex-grow: 0.75;
-}
-
-
-/*MAIN*/
-
-.main-seccion{
-    text-align: center;
-    background-color: #ebebeb;
-    width: 100%;
-    margin: auto;
-
-}
-
-.seccion-articulos{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-   
-}
-
-.elementos-articulo{
-    border-top: 1px solid #FFF;
-    font-size:10px;
-    position: relative;
-    background-color: white;
-}
-
-.titulares-seccion{
-    font-family: "roboto";
-    font-size: 24px;
-    text-align: left;
-    margin-left: 60px;
-    margin-left: 30px;
-    font-weight: 900;
-}
-
-.elementos-articulo{
-    border-top: 1px solid #ebebeb;
-    font-size:10px;
-    position: relative;
-    padding: 15px;
-
-}
-
-.camion-logo{
-    display: block;
-    font-size: 16px;
-    padding: 2px;
-    width: 25px;
-    height: 25px;
-    border: 1px solid #39b54a;
-    background-color: #FFF;
-    border-radius: 50%;
-    right: 15px;
-    top: -18px;
-    color:#39b54a;
-    position: absolute;
-
-}
-
-.descripcion{
-    font-size: 16px;
-    font-family: "roboto";
-    text-align: left;
-    margin-left: 20px;
-    display: none;
-
+/* MAIN */
+.container-novedades{
+    margin:auto;
+    padding: 10px;
 }
 
 /*FOOTER*/
@@ -265,39 +69,14 @@ body{
     margin: auto;
 }
 
-/*HTML REGISTER*/
 
-     /*MAIN*/
-    .main{
-        width: 100%;
-    }
+.container-novedades{
+    display: flex;
+    justify-content: space-around;
+}
 
-    .titulares-seccion{
-        margin-left: 60px;
-    }
-
-    .descripcion{
-        display: none;
-        text-align: center;
-    }
-    
-    div:hover h4{
-        display:block;
-
-    }
-
-    .precio{
-        font-size: 20px;
-        font-weight:900;
-        flex-grow: 0.30;
-        text-align: center;
-    }
-
-
-
-
-
- 
-
+.contenedor-categorias {
+    border-radius: 100%;
+}
 
 

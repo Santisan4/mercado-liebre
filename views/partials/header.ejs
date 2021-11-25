@@ -1,30 +1,50 @@
-<header class = "main-header">
-    <div class = "top-navBar">
-        <div class = "contenedor-logo">
-            <a href = "/"><img src = "/img/logo-mercado-liebre.svg" class = "logo"></a>
-        </div>    
-        <div id = "contenedor-barra-busqueda-header" class="form-group fg--search search-bar">
-            <input type="text" class="input" placeholder=" Buscar productos, marcas y más ">
-            <button class = "boton-busqueda-header" type="submit"><i class="fa fa-search"></i></button>
+<body>
+<nav class="navbar navbar-light" style="background-color: #FFFFFF;">
+    <nav class="navbar navbar-expand-lg" style="width: 100%;">
+        <div class="container-fluid">
+            <a href = "/"><img src ="/img/titleist_logo.svg" class = "logo" style="width: 200px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href = "/" style="margin-left: 10px;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/productos/" >Productos</a>
+                </li>
+                <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>  
+                <% if(locals.isLogged) { %>  
+                    <li class="nav-item dropdown active" style="margin-left: 550px;">
+                        <a class="nav-link dropdown-toggle active" href="#" id="dropUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <%= locals.userLogged.nombre %>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">           
+                            <li><a class="dropdown-item" href="/users/profile">Mi perfil</a></li>
+                            <li><a class="dropdown-item" href="/users/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link" href="#">Mis compras <i class="fas fa-shopping-basket"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/productos/crear">Vender</a>
+                    </li>
+                <% } else  { %>
+                    <li class="nav-item" style="margin-left: 600px;">
+                        <a class="nav-link" href="/users/register" tabindex="-1">Creá tu cuenta <i class="far fa-address-card"></i></a>
+                    </li>
+                    <li class="nav-item" >
+                        <a class="nav-link" href="/users/login" tabindex="-1">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+                    </li>
+                <% } %>
+          </div>
         </div>
-        <div class = "copy-header">
-            <i class="fas fa-hand-holding-usd"></i>
-            Comprá en cuotas y sin tarjeta de crédito
-        </div>
-    </div>
-
-    <div class="navBar">
-        <div id="myLinks" class = "elementos-izquierda-navBar">
-            <a href="/" >Todos los productos</a>
-            <a href="#" >Ofertas</a>
-            <a href="#" >Tiendas Oficiales</a>
-            <a href="/productos/crear">Vender</a>
-            <a href="#" >Ayuda</a>
-        </div>
-        <div class = "elementos-derecha-navBar">   
-            <a href="/users/register" >Creá tu cuenta <i class="far fa-address-card"></i></a>
-            <a href="/users/login" >Ingresá <i class="fas fa-sign-in-alt"></i></a>
-            <a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a>
-        </div>
-    </div>
-</header> 
+      </nav>
+</nav>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
